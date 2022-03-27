@@ -1,1 +1,3 @@
-h1
+{
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "javascriptreact", "html", "scss", "ts", "tsx"]
+}

@@ -35,6 +35,7 @@ Plug 'gruvbox-community/gruvbox'
 
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'kyazdani42/nvim-web-devicons'
 
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'tpope/vim-haml'

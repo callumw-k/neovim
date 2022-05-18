@@ -3,7 +3,7 @@ set hidden
 set cmdheight=2
 set updatetime=300
 set nohlsearch
-imap jk <Esc>
+"imap jk <Esc>
 set scrolloff=8
 set number
 set incsearch
@@ -20,10 +20,13 @@ set signcolumn=yes
 
 call plug#begin(stdpath('data') . '/plugged')
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'    
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf.vim'    
 "Plug 'mattn/emmet-vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ayu-theme/ayu-vim'
 
@@ -35,6 +38,7 @@ Plug 'vim-airline/vim-airline'
 
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'tpope/vim-haml'
+Plug 'ggandor/lightspeed.nvim'
 Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'pangloss/vim-javascript'
@@ -46,12 +50,10 @@ Plug 'jparise/vim-graphql'
 Plug 'posva/vim-vue'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'tpope/vim-surround'
 Plug 'github/copilot.vim'
 call plug#end()
 
 let g:coc_global_extensions = [
-    \ 'coc-tsserver',
     \ 'coc-json',
     \ 'coc-styled-components',
     \ 'coc-emmet',
@@ -59,13 +61,18 @@ let g:coc_global_extensions = [
     \ 'coc-css',
     \ 'coc-phpls',
     \ 'coc-python',
-    \ 'coc-prettier',
-    \ 'coc-eslint',
     \ 'coc-diagnostic',
     \ 'coc-vetur'
     \]
 
-"set termguicolors
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
+
 let ayocolor="dark"
 colorscheme gruvbox
 set background=dark
@@ -75,8 +82,12 @@ let mapleader = " "
 
 nnoremap <leader>pv :NERDTree<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>
+tnoremap <Esc> <C-\><C-n>
 
-nnoremap <C-p> :GFiles<CR>
+"nnoremap <C-p> :GFiles<CR>
+nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :

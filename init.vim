@@ -85,7 +85,7 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 tnoremap <Esc> <C-\><C-n>
 
 "nnoremap <C-p> :GFiles<CR>
-nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 

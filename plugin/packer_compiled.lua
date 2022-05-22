@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\cwell\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ale = {
+    loaded = true,
+    path = "C:\\Users\\cwell\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\ale",
+    url = "https://github.com/dense-analysis/ale"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "C:\\Users\\cwell\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer",
@@ -123,11 +128,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\cwell\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nerdtree",
     url = "https://github.com/preservim/nerdtree"
-  },
-  ["null-ls.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\cwell\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,

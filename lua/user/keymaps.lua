@@ -28,3 +28,4 @@ keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>",
 keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 keymap("n", "<leader>fp", ":lua require'telescope'.extensions.project.project{}<CR>", opts)
 keymap("i", "<S-Insert>", "<C-R>*", opts)
+keymap("t", "<Esc>", "<C-\\><C-n>", opts)

@@ -22,9 +22,9 @@ vim.g.maplocalleader = " "
 -- Better window navigation
 keymap("n", "<leader>pv", ":NvimTreeToggle<cr>", opts)
 -- keymap("n", "<leader>pv", ":NvimTreeToggle<cr>", opts)
-keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
+keymap("n", "<leader>fp", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
-keymap("n", "<leader>fp", ":lua require'telescope'.extensions.project.project{}<CR>", opts)
+keymap("n", "<leader>FP", ":lua require'telescope'.extensions.project.project{}<CR>", opts)
 keymap("i", "<S-Insert>", "<C-R>*", opts)
 keymap("t", "<Esc>", "<C-\\><C-n>", opts)

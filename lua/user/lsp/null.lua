@@ -9,9 +9,10 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
-	debug = false,
+	debug = true,
 	sources = {
-		formatting.prettier.with({ filetypes = { "javascriptreact", "typescriptreact", "javascript", "typescript" } }),
+		formatting.prettierd,
+--		formatting.prettier.with({ filetypes = { "javascriptreact", "typescriptreact", "javascript", "typescript" } }),
 		formatting.stylua,
 	},
 	on_attach = function(client)

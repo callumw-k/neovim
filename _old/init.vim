@@ -130,7 +130,7 @@ nmap <leader>qf<Plug>(coc-fix-current)
 
 "Setting colour theme to gruvbox
 let ayocolor="dark"
-colorscheme gruvbox
+colorscheme dracula
 set background=dark
 
 "Keybinds

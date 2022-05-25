@@ -47,9 +47,13 @@ return packer.startup(function(use)
 	})
 	use("p00f/nvim-ts-rainbow")
 	use("nvim-treesitter/playground")
+	use("MaxMEllon/vim-jsx-pretty")
+
+	use("tpope/vim-commentary")
 
 	-- Telescope
 	use("nvim-telescope/telescope-project.nvim") -- Project navigation
+  use("glepnir/dashboard-nvim")
 	use("kyazdani42/nvim-web-devicons")
 
 	--Navigation & Quality of Life
@@ -57,7 +61,7 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 
 	-- cmp plugins
-	use("hrsh7th/nvim-cmp") -- The completion plugin
+	use("hrsh7th/nvim-cmp") -- The completion pluginplug
 	use("hrsh7th/cmp-buffer") -- buffer completions
 	use("hrsh7th/cmp-path") -- path completions
 	use("hrsh7th/cmp-cmdline") -- cmdline completions
@@ -75,14 +79,15 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim")
 	-- use "MunifTanjim/prettier.nvim"
 	-- use "dense-analysis/ale"
-  use "github/copilot.vim"
+	use("github/copilot.vim")
 
 	use("vim-airline/vim-airline") -- Airline theme
 
 	use("kyazdani42/nvim-tree.lua") -- Tree view
 
+	use("dracula/vim")
 	use("yong1le/darkplus.nvim")
-  use("folke/tokyonight.nvim")
+	use("folke/tokyonight.nvim")
 	--use("ellisonleao/gruvbox.nvim")
 	use("joshdick/onedark.vim")
 	use("sainnhe/sonokai")

@@ -53,14 +53,22 @@ return packer.startup(function(use)
 
 	-- Telescope
 	use("nvim-telescope/telescope-project.nvim") -- Project navigation
-  use("glepnir/dashboard-nvim")
+	--use("glepnir/dashboard-nvim")
+	-- use({
+	-- 	"goolord/alpha-nvim",
+	-- 	config = function()
+	-- 		require("alpha").setup(require("alpha.themes.dashboard").config)
+	-- 	end,
+	-- })
 	use("kyazdani42/nvim-web-devicons")
 
 	--Navigation & Quality of Life
 	use("ggandor/lightspeed.nvim") -- Navigation
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
+	use("Shatur/neovim-session-manager")
 
 	-- cmp plugins
+	--
 	use("hrsh7th/nvim-cmp") -- The completion pluginplug
 	use("hrsh7th/cmp-buffer") -- buffer completions
 	use("hrsh7th/cmp-path") -- path completions
@@ -82,7 +90,7 @@ return packer.startup(function(use)
 	use("github/copilot.vim")
 
 	-- use("vim-airline/vim-airline") -- Airline theme
-  use ("nvim-lualine/lualine.nvim") 
+	use("nvim-lualine/lualine.nvim")
 
 	use("kyazdani42/nvim-tree.lua") -- Tree view
 

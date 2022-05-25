@@ -1,4 +1,4 @@
 vim.cmd([[
     set termguicolors
-    colorscheme gruvbox
+    colorscheme dracula
 ]])

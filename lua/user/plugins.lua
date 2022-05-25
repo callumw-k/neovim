@@ -81,7 +81,8 @@ return packer.startup(function(use)
 	-- use "dense-analysis/ale"
 	use("github/copilot.vim")
 
-	use("vim-airline/vim-airline") -- Airline theme
+	-- use("vim-airline/vim-airline") -- Airline theme
+  use ("nvim-lualine/lualine.nvim") 
 
 	use("kyazdani42/nvim-tree.lua") -- Tree view
 

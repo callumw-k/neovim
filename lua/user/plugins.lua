@@ -53,19 +53,15 @@ return packer.startup(function(use)
 
 	-- Telescope
 	use("nvim-telescope/telescope-project.nvim") -- Project navigation
-	--use("glepnir/dashboard-nvim")
-	-- use({
-	-- 	"goolord/alpha-nvim",
-	-- 	config = function()
-	-- 		require("alpha").setup(require("alpha.themes.dashboard").config)
-	-- 	end,
-	-- })
 	use("kyazdani42/nvim-web-devicons")
+	use("nvim-telescope/telescope-file-browser.nvim")
+
+	use("rmagatti/auto-session")
+	use("rmagatti/session-lens")
 
 	--Navigation & Quality of Life
 	use("ggandor/lightspeed.nvim") -- Navigation
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
-	use("Shatur/neovim-session-manager")
 
 	-- cmp plugins
 	--
@@ -85,11 +81,8 @@ return packer.startup(function(use)
 	use("neovim/nvim-lspconfig")
 	use("williamboman/nvim-lsp-installer")
 	use("jose-elias-alvarez/null-ls.nvim")
-	-- use "MunifTanjim/prettier.nvim"
-	-- use "dense-analysis/ale"
 	use("github/copilot.vim")
 
-	-- use("vim-airline/vim-airline") -- Airline theme
 	use("nvim-lualine/lualine.nvim")
 
 	use("kyazdani42/nvim-tree.lua") -- Tree view
@@ -97,7 +90,6 @@ return packer.startup(function(use)
 	use("dracula/vim")
 	use("yong1le/darkplus.nvim")
 	use("folke/tokyonight.nvim")
-	--use("ellisonleao/gruvbox.nvim")
 	use("joshdick/onedark.vim")
 	use("sainnhe/sonokai")
 	use("gruvbox-community/gruvbox")

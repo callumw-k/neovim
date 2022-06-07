@@ -82,8 +82,11 @@ telescope.setup({
 			theme = "dropdown",
 		},
 	},
-	extensions = {}
+	extensions = {
+		sessions_picker = {
+			sessions_dir = vim.fn.stdpath("data") .. "\\sessions",
+		},
+	},
 })
 telescope.load_extension("file_browser")
-telescope.load_extension("session-lens")
-
+telescope.load_extension("sessions_picker")

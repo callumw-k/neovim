@@ -54,10 +54,12 @@ return packer.startup(function(use)
 	-- Telescope
 	use("nvim-telescope/telescope-project.nvim") -- Project navigation
 	use("kyazdani42/nvim-web-devicons")
-	use("nvim-telescope/telescope-file-browser.nvim")
+	use({ "nvim-telescope/telescope-file-browser.nvim" })
 
-	use("rmagatti/auto-session")
-	use("rmagatti/session-lens")
+	-- use("rmagatti/auto-session")
+	-- use("rmagatti/session-lens")
+  use 'JoseConseco/telescope_sessions_picker.nvim'
+  
 
 	--Navigation & Quality of Life
 	use("ggandor/lightspeed.nvim") -- Navigation
@@ -76,6 +78,7 @@ return packer.startup(function(use)
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+	use("simrat39/rust-tools.nvim") -- rust tools
 
 	-- LSP
 	use("neovim/nvim-lspconfig")
@@ -86,8 +89,7 @@ return packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 
 	use("kyazdani42/nvim-tree.lua") -- Tree view
-
-	use("dracula/vim")
+	use("lunarvim/onedarker.nvim")
 	use("yong1le/darkplus.nvim")
 	use("folke/tokyonight.nvim")
 	use("joshdick/onedark.vim")
@@ -96,6 +98,7 @@ return packer.startup(function(use)
 	use("ayu-theme/ayu-vim")
 	use("tpope/vim-fugitive") -- Git integration
 	use("preservim/nerdtree") -- File tree
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

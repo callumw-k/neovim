@@ -20,7 +20,7 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
--- keymap("n", "<leader>pv", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>pv", ":NvimTreeToggle<cr>", opts)
 -- keymap("n", "<leader>pv", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>fp", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)

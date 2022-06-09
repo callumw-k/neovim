@@ -43,7 +43,6 @@ return packer.startup(function(use)
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
 	})
 	use("p00f/nvim-ts-rainbow")
 	use("nvim-treesitter/playground")
@@ -58,8 +57,7 @@ return packer.startup(function(use)
 
 	-- use("rmagatti/auto-session")
 	-- use("rmagatti/session-lens")
-  use 'JoseConseco/telescope_sessions_picker.nvim'
-  
+	-- use("JoseConseco/telescope_sessions_picker.nvim")
 
 	--Navigation & Quality of Life
 	use("ggandor/lightspeed.nvim") -- Navigation

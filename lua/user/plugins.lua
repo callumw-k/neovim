@@ -45,6 +45,7 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 	})
 	use("p00f/nvim-ts-rainbow")
+  use 'lewis6991/impatient.nvim'
 	use("nvim-treesitter/playground")
 	use("MaxMEllon/vim-jsx-pretty")
 
@@ -87,8 +88,9 @@ return packer.startup(function(use)
 	use("styled-components/vim-styled-components")
 
 	use("nvim-lualine/lualine.nvim")
+  use("danilamihailov/beacon.nvim")
 
-use("dracula/vim")
+  use("dracula/vim")
 	use("lunarvim/onedarker.nvim")
 	use("yong1le/darkplus.nvim")
 	use("folke/tokyonight.nvim")

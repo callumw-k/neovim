@@ -1,5 +1,5 @@
+vim.opt.termguicolors = true
 vim.cmd([[
     "let g:dracula_italic = 0
-    set termguicolors
-    colorscheme onedarker
+    colorscheme dracula
 ]])

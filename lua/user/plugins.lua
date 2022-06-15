@@ -54,7 +54,7 @@ return packer.startup(function(use)
 	use("nvim-telescope/telescope-project.nvim") -- Project navigation
 	use("kyazdani42/nvim-web-devicons")
 	use({ "callumw-k/telescope-file-browser.nvim" })
-	use("styled-components/vim-styled-components")
+	use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" })
 
 	-- use("rmagatti/auto-session")
 	-- use("rmagatti/session-lens")
@@ -84,10 +84,11 @@ return packer.startup(function(use)
 	use("williamboman/nvim-lsp-installer")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("github/copilot.vim")
+	use("styled-components/vim-styled-components")
 
 	use("nvim-lualine/lualine.nvim")
 
-	use("kyazdani42/nvim-tree.lua") -- Tree view
+use("dracula/vim")
 	use("lunarvim/onedarker.nvim")
 	use("yong1le/darkplus.nvim")
 	use("folke/tokyonight.nvim")

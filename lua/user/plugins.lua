@@ -54,8 +54,12 @@ return packer.startup(function(use)
 	-- Telescope
 	use("nvim-telescope/telescope-project.nvim") -- Project navigation
 	use("kyazdani42/nvim-web-devicons")
-	use({ "callumw-k/telescope-file-browser.nvim" })
+	use("callumw-k/telescope-file-browser.nvim" )
+
+
 	use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" })
+  use {"akinsho/toggleterm.nvim", tag = 'v1.*'}
+  use("vimwiki/vimwiki")
 
 	-- use("rmagatti/auto-session")
 	-- use("rmagatti/session-lens")

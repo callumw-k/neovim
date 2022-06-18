@@ -48,4 +48,5 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
+keymap("n", "<leader>/", "<Cmd>exe v:count1 . 'ToggleTerm'<CR>", opts)
+keymap("n", "<leader>bd", ":bd<CR>", opts)

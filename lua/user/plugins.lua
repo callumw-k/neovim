@@ -41,29 +41,25 @@ return packer.startup(function(use)
 	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } }) -- Quickly jump to symbols
 
 	-- Treesitter
-	use({
-		"nvim-treesitter/nvim-treesitter",
-	})
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+  use  "windwp/nvim-ts-autotag" 
 	use("p00f/nvim-ts-rainbow")
-  use 'lewis6991/impatient.nvim'
 	use("nvim-treesitter/playground")
-	use("MaxMEllon/vim-jsx-pretty")
+	-- use("MaxMEllon/vim-jsx-pretty")
+	use("lewis6991/impatient.nvim")
+	use("nathom/filetype.nvim")
 
 	use("tpope/vim-commentary")
 
 	-- Telescope
-	use("nvim-telescope/telescope-project.nvim") -- Project navigation
+	-- use("nvim-telescope/telescope-project.nvim") -- Project navigation
+	use("ahmedkhalf/project.nvim")
 	use("kyazdani42/nvim-web-devicons")
-	use("callumw-k/telescope-file-browser.nvim" )
-
+	use("callumw-k/telescope-file-browser.nvim")
 
 	use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" })
-  use {"akinsho/toggleterm.nvim", tag = 'v1.*'}
-  use("vimwiki/vimwiki")
-
-	-- use("rmagatti/auto-session")
-	-- use("rmagatti/session-lens")
-	-- use("JoseConseco/telescope_sessions_picker.nvim")
+	use({ "akinsho/toggleterm.nvim", tag = "v1.*" })
+	use("vimwiki/vimwiki")
 
 	--Navigation & Quality of Life
 	use("ggandor/lightspeed.nvim") -- Navigation
@@ -87,14 +83,19 @@ return packer.startup(function(use)
 	-- LSP
 	use("neovim/nvim-lspconfig")
 	use("williamboman/nvim-lsp-installer")
+	use("tamago324/nlsp-settings.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("github/copilot.vim")
 	use("styled-components/vim-styled-components")
 
+	use({
+		"SmiteshP/nvim-navic",
+		requires = "neovim/nvim-lspconfig",
+	})
 	use("nvim-lualine/lualine.nvim")
-  use("danilamihailov/beacon.nvim")
+	use("danilamihailov/beacon.nvim")
 
-  use("dracula/vim")
+	use("dracula/vim")
 	use("lunarvim/onedarker.nvim")
 	use("yong1le/darkplus.nvim")
 	use("folke/tokyonight.nvim")
@@ -103,7 +104,6 @@ return packer.startup(function(use)
 	use("gruvbox-community/gruvbox")
 	use("ayu-theme/ayu-vim")
 	use("tpope/vim-fugitive") -- Git integration
-	use("preservim/nerdtree") -- File tree
 
 	if packer_bootstrap then
 		require("packer").sync()

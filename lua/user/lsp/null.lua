@@ -26,8 +26,11 @@ null_ls.setup({
         return false
       end
     end
-		if client.resolved_capabilities.document_formatting and file_exists(".prettierrc") then
+		if client.resolved_capabilities.document_formatting and not file_exists("package.json") then
 			vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync()")
+    else if client.resolved_capabilities.document_formatting and file_exists("package.json") and file_exists(".prettierrc") then
+      vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync()")
+    end
 		end
 	end,
 })

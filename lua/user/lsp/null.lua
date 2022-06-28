@@ -8,7 +8,6 @@ local formatting = null_ls.builtins.formatting
 -- -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 
-
 null_ls.setup({
 	debug = false,
 	sources = {
@@ -17,21 +16,21 @@ null_ls.setup({
 		formatting.stylua,
 	},
 	on_attach = function(client)
-    local function file_exists(name)
-      local f = io.open(name, "r")
-      if f ~= nil then
-        io.close(f)
-        return true
-      else
-        return false
-      end
-    end
-		if client.resolved_capabilities.document_formatting and not file_exists("package.json") then
-			vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync()")
-    else if client.resolved_capabilities.document_formatting and file_exists("package.json") and file_exists(".prettierrc") then
-      vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync()")
-    end
+		local function file_exists(name)
+			local f = io.open(name, "r")
+			if f ~= nil then
+				io.close(f)
+				return true
+			else
+				return false
+			end
 		end
+		vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync()")
+		-- if client.resolved_capabilities.document_formatting and not file_exists("package.json") then
+		-- 	vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync()")
+		-- else if client.resolved_capabilities.document_formatting and file_exists("package.json") and file_exists(".prettierrc") then
+		-- vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync()")
+		-- end
+		-- end
 	end,
 })
-

@@ -14,6 +14,9 @@ configs.setup({
 		extend_mode = true,
 		max_file_line = nil,
 	},
+	autotag = {
+		enable = true,
+	},
 	playground = {
 		enable = true,
 		disable = {},

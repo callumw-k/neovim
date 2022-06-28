@@ -14,10 +14,6 @@ configs.setup({
 		extend_mode = true,
 		max_file_line = nil,
 	},
-	autotag = {
-		enable = true,
-		filetypes = { "typescript", "typescriptreact" },
-	},
 	playground = {
 		enable = true,
 		disable = {},

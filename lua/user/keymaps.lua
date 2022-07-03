@@ -31,6 +31,7 @@ keymap("i", "<S-Insert>", "<C-R>*", opts)
 keymap("t", "<Esc>", "<C-\\><C-n>", opts)
 keymap('n', '<leader>n', ':NvimTreeFindFile', opts)
 keymap("n", "<leader>pv", ":Telescope file_browser<cr>", opts)
+keymap("n", "<leader>fh", ":Format<cr>", opts)
 
 -- Normal --
 -- Better window navigation
@@ -49,4 +50,5 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>/", "<Cmd>exe v:count1 . 'ToggleTerm'<CR>", opts)
-keymap("n", "<leader>bd", ":bd<CR>", opts)
+keymap("n", "<leader>d", ":bd!<CR>", opts)
+keymap("n", "<leader>bda", ":%bd!<CR>", opts)

@@ -82,6 +82,6 @@ telescope.setup({
 			theme = "dropdown",
 		},
 	},
-	      extensions = { },
+	extensions = {},
 })
 telescope.load_extension("file_browser")

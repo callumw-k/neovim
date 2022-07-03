@@ -40,9 +40,10 @@ return packer.startup(function(use)
 	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } }) -- Quickly jump to symbols
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-	use  "windwp/nvim-ts-autotag"
+	use("windwp/nvim-ts-autotag")
 	use("p00f/nvim-ts-rainbow")
 	use("nvim-treesitter/playground")
+
 	-- use("MaxMEllon/vim-jsx-pretty")
 	use("lewis6991/impatient.nvim")
 	use("nathom/filetype.nvim")

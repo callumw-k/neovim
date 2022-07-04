@@ -37,7 +37,8 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Have packer manage itself
-	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } }) -- Quickly jump to symbols
+  use("nvim-lua/plenary.nvim") -- Completion engine
+  use("nvim-telescope/telescope.nvim") -- Vim-like UI for finding things
 	-- Treesitter
 	use("windwp/nvim-ts-autotag")
 	use("p00f/nvim-ts-rainbow")

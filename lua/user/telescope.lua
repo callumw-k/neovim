@@ -84,4 +84,5 @@ telescope.setup({
 	},
 	extensions = {},
 })
+
 telescope.load_extension("file_browser")

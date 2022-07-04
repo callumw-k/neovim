@@ -96,6 +96,7 @@ if not status_ok then
 	return
 end
 
+vim.lsp.set_log_level("debug")
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 return M

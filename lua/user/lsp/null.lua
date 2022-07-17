@@ -12,7 +12,7 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.prettierd,
-		-- null_ls.builtins.diagnostics.eslint,
+		null_ls.builtins.diagnostics.eslint_d,
 		-- null_ls.builtins.code_actions.eslint,
 		--		formatting.prettier.with({ filetypes = { "javascriptreact", "typescriptreact", "javascript", "typescript" } }),
 		formatting.stylua,

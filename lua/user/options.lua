@@ -20,6 +20,4 @@ vim.cmd([[set nowrap]], true)
 
 vim.cmd([[
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
-set nocompatible
-filetype plugin on
 ]])

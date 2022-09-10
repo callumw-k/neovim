@@ -12,8 +12,9 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.prettierd,
+		formatting.eslint_d,
 		null_ls.builtins.diagnostics.eslint_d,
-		-- null_ls.builtins.code_actions.eslint,
+		null_ls.builtins.code_actions.eslint_d,
 		--		formatting.prettier.with({ filetypes = { "javascriptreact", "typescriptreact", "javascript", "typescript" } }),
 		formatting.stylua,
 	},

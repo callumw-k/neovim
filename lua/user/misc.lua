@@ -13,6 +13,7 @@ if not comment_ok then
   return
 end
 
+
 which_key.setup {}
 leap.set_default_keymaps()
 comment.setup()

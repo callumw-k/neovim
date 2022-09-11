@@ -59,6 +59,16 @@ return require('packer').startup(function(use)
   use "folke/which-key.nvim"
   use "ggandor/leap.nvim"
   use 'numToStr/Comment.nvim'
+  use { 'windwp/nvim-autopairs', config = function() require("user.autopairs").setup() end }
+
+  use {
+    "windwp/nvim-ts-autotag",
+    wants = "nvim-treesitter",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-ts-autotag").setup { enable = true }
+    end,
+  }
 
   if packer_bootstrap then
     require('packer').sync()

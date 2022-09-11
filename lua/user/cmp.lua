@@ -3,6 +3,11 @@ if not status_ok then
   return
 end
 
+local autopairs_status, autopairs = pcall(require, "nvim-autopairs.completion.cmp")
+if not autopairs_status then
+  return
+end
+
 cmp.setup {
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -57,3 +62,4 @@ cmp.setup.cmdline('/', {
   }
 })
 
+cmp.event:on("confirm_done", autopairs.on_confirm_done { map_char = { tex = "" } })

@@ -19,6 +19,7 @@ vim.cmd([[
 ]])
 
 return require('packer').startup(function(use)
+  --Plugins
   use 'wbthomason/packer.nvim'
   use 'nvim-lua/plenary.nvim'
 
@@ -27,6 +28,8 @@ return require('packer').startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'mhartington/formatter.nvim'
+
+  --Treesitte
   use 'nvim-treesitter/nvim-treesitter'
 
   --CMP
@@ -38,10 +41,25 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 
+  --Null-ls
+  use 'jose-elias-alvarez/null-ls.nvim'
 
   --Telescope and telescope extensions
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
-  use { "callumw-k/telescope-file-browser.nvim" }
+  use "callumw-k/telescope-file-browser.nvim"
+
+  -- Project
+  use 'nvim-telescope/telescope-project.nvim'
+
+  --Theming
+  use 'navarasu/onedark.nvim'
+
+  --Misc
+  --use 'antoinemadec/FixCursorHold.nvim'
+  use "folke/which-key.nvim"
+  use "ggandor/leap.nvim"
+  use 'numToStr/Comment.nvim'
+
   if packer_bootstrap then
     require('packer').sync()
   end

@@ -17,8 +17,6 @@ set colorcolumn=80
 set signcolumn=yes
 
 
-set shell=powershell.exe
-
 
 
 call plug#begin(stdpath('data') . '/plugged')

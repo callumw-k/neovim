@@ -13,7 +13,22 @@ cmp.setup {
       -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
     end,
   },
+  formatting = {
+    format = function(entry, vim_item)
+      vim_item.menu = ({
+        nvim_lsp = "[LSP]",
+        buffer = "[Buffer]",
+        -- luasnip = "[Snip]",
+        -- nvim_lua = "[Lua]",
+        treesitter = "[Treesitter]",
+        path = "[Path]",
+      })[entry.source.name]
+      return vim_item
+    end,
+  },
   mapping = cmp.mapping.preset.insert({
+    ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+    ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<CR>'] = cmp.mapping.confirm {
@@ -37,7 +52,10 @@ cmp.setup {
   }),
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'vsnip' }
+    { name = "treesitter" },
+    { name = "buffer" },
+    { name = 'vsnip' },
+    { name = "path" },
   },
 }
 
@@ -51,6 +69,13 @@ cmp.setup.cmdline(':', {
 })
 
 cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+cmp.setup.cmdline('?', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer' }

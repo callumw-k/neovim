@@ -1,3 +1,8 @@
+local ok, _ = pcall(require, "impatient")
+if not ok then
+  return
+end
+
 require("user.options")
 require("user.plugins")
 require("user.telescope")

@@ -28,14 +28,25 @@ return require('packer').startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'mhartington/formatter.nvim'
+  use { "folke/trouble.nvim", config = function() require("user.trouble-config.init").setup() end }
 
   --Treesitte
   use 'nvim-treesitter/nvim-treesitter'
+  use { 'windwp/nvim-autopairs', config = function() require("user.autopairs").setup() end }
+  use {
+    "windwp/nvim-ts-autotag",
+    wants = "nvim-treesitter",
+    event = "InsertEnter",
+    config = function()
+      require("nvim-ts-autotag").setup { enable = true }
+    end,
+  }
 
   --CMP
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
+  use 'ray-x/cmp-treesitter'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-vsnip'
@@ -51,24 +62,20 @@ return require('packer').startup(function(use)
   -- Project
   use 'nvim-telescope/telescope-project.nvim'
 
+  --Bufferline
+  use { 'akinsho/bufferline.nvim', tag = "v2.*", config = function() require("user.bufferline-config").setup() end }
+
   --Theming
   use 'navarasu/onedark.nvim'
 
   --Misc
-  --use 'antoinemadec/FixCursorHold.nvim'
-  use "folke/which-key.nvim"
+  use { "folke/which-key.nvim", config = function() require("user.whichkey-config.init").setup() end }
   use "ggandor/leap.nvim"
   use 'numToStr/Comment.nvim'
-  use { 'windwp/nvim-autopairs', config = function() require("user.autopairs").setup() end }
-
-  use {
-    "windwp/nvim-ts-autotag",
-    wants = "nvim-treesitter",
-    event = "InsertEnter",
-    config = function()
-      require("nvim-ts-autotag").setup { enable = true }
-    end,
-  }
+  use "kyazdani42/nvim-web-devicons"
+  use { 'akinsho/toggleterm.nvim', config = function() require("user.toggleterm").setup() end }
+  use "folke/lsp-colors.nvim"
+  use "lewis6991/impatient.nvim"
 
   if packer_bootstrap then
     require('packer').sync()

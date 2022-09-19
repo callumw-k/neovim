@@ -12,7 +12,8 @@ vim.g.maplocalleader = " "
 keymap("n", "<leader>fp", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
 keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
-keymap("n", "<leader>pv", "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>", opts)
+keymap("n", "<leader>pv", "<cmd>lua require 'telescope'.extensions.file_browser.file_browser({ path = '%:p:h' })<CR>",
+  opts)
 keymap('n', '<leader>fr', ":lua require'telescope'.extensions.project.project{}<CR>", opts)
 
 -- Navigate buffers

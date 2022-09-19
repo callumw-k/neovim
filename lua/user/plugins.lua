@@ -18,6 +18,8 @@ vim.cmd([[
   augroup end
 ]])
 
+pcall(require, "impatient")
+
 return require('packer').startup(function(use)
   --Plugins
   use 'wbthomason/packer.nvim'
@@ -28,54 +30,48 @@ return require('packer').startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'mhartington/formatter.nvim'
-  use { "folke/trouble.nvim", config = function() require("user.trouble-config.init").setup() end }
+  use { "folke/trouble.nvim", config = function() require("config.trouble").setup() end }
 
   --Treesitte
-  use 'nvim-treesitter/nvim-treesitter'
-  use { 'windwp/nvim-autopairs', config = function() require("user.autopairs").setup() end }
-  use {
-    "windwp/nvim-ts-autotag",
-    wants = "nvim-treesitter",
-    event = "InsertEnter",
-    config = function()
-      require("nvim-ts-autotag").setup { enable = true }
-    end,
-  }
+  use { 'nvim-treesitter/nvim-treesitter', config = function() require("config.treesitter").setup() end }
+  use { 'windwp/nvim-autopairs', config = function() require("config.autopairs").setup() end }
+  use { "windwp/nvim-ts-autotag", event = "InsertEnter",
+    config = function() require("nvim-ts-autotag").setup { enable = true } end, }
 
-  --CMP
+  use { 'hrsh7th/nvim-cmp', config = function() require("config.cmp").setup() end } -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'ray-x/cmp-treesitter'
   use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 
   --Null-ls
-  use 'jose-elias-alvarez/null-ls.nvim'
+  use { 'jose-elias-alvarez/null-ls.nvim', config = function() require("config.null-ls") end }
 
   --Telescope and telescope extensions
-  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', config = function() require("config.telescope").setup() end }
   use "callumw-k/telescope-file-browser.nvim"
 
   -- Project
   use 'nvim-telescope/telescope-project.nvim'
 
   --Bufferline
-  use { 'akinsho/bufferline.nvim', tag = "v2.*", config = function() require("user.bufferline-config").setup() end }
+  use { 'akinsho/bufferline.nvim', tag = "v2.*", config = function() require("config.bufferline").setup() end }
 
   --Theming
-  use 'navarasu/onedark.nvim'
+  use { 'navarasu/onedark.nvim', config = function() require("config.colorscheme").setup() end }
+
 
   --Misc
-  use { "folke/which-key.nvim", config = function() require("user.whichkey-config.init").setup() end }
-  use "ggandor/leap.nvim"
-  use 'numToStr/Comment.nvim'
-  use "kyazdani42/nvim-web-devicons"
-  use { 'akinsho/toggleterm.nvim', config = function() require("user.toggleterm").setup() end }
-  use "folke/lsp-colors.nvim"
-  use "lewis6991/impatient.nvim"
+  use { "folke/which-key.nvim", config = function() require("config.whichkey").setup() end }
+  use { 'akinsho/toggleterm.nvim', config = function() require("config.toggleterm").setup() end }
+  use { "ggandor/leap.nvim" }
+  use { "numToStr/Comment.nvim" }
+  use { "kyazdani42/nvim-web-devicons" }
+  use { "folke/lsp-colors.nvim" }
+  use { "lewis6991/impatient.nvim" }
 
   if packer_bootstrap then
     require('packer').sync()

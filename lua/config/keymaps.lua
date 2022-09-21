@@ -18,6 +18,12 @@ M.setup = function()
     opts)
   keymap('n', '<leader>fr', ":lua require'telescope'.extensions.project.project{}<CR>", opts)
 
+  -- Better window navigation
+  keymap("n", "<C-h>", "<C-w>h", opts)
+  keymap("n", "<C-j>", "<C-w>j", opts)
+  keymap("n", "<C-k>", "<C-w>k", opts)
+  keymap("n", "<C-l>", "<C-w>l", opts)
+
   -- Navigate buffers
   keymap("n", "<S-l>", ":bnext<CR>", opts)
   keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -30,6 +36,8 @@ M.setup = function()
   keymap("n", "<Right>", ":vertical resize -1<CR>", opts)
   keymap("n", "<Up>", ":resize -1<CR>", opts)
   keymap("n", "<Down>", ":resize +1<CR>", opts)
+  -- Maximise Pane
+  keymap("n", "<leader>mm", '<Cmd>WindowsMaximize<CR>', opts)
 end
 
 return M

@@ -48,11 +48,11 @@ return require('packer').startup(function(use)
   use 'hrsh7th/vim-vsnip'
 
   --Null-ls
-  use { 'jose-elias-alvarez/null-ls.nvim', config = function() require("config.null-ls") end }
+  use { 'jose-elias-alvarez/null-ls.nvim', config = function() require("config.null-ls").setup() end }
 
   --Telescope and telescope extensions
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', config = function() require("config.telescope").setup() end }
-  use "callumw-k/telescope-file-browser.nvim"
+  use "nvim-telescope/telescope-file-browser.nvim"
 
   -- Project
   use 'nvim-telescope/telescope-project.nvim'
@@ -63,6 +63,11 @@ return require('packer').startup(function(use)
   --Theming
   use { 'navarasu/onedark.nvim', config = function() require("config.colorscheme").setup() end }
 
+  --UI
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', config = function() require("config.lualine").setup() end }
+  }
 
   --Misc
   use { "folke/which-key.nvim", config = function() require("config.whichkey").setup() end }
@@ -72,6 +77,15 @@ return require('packer').startup(function(use)
   use { "kyazdani42/nvim-web-devicons" }
   use { "folke/lsp-colors.nvim" }
   use { "lewis6991/impatient.nvim" }
+  use { "anuvyklack/windows.nvim",
+    requires = {
+      "anuvyklack/middleclass",
+      "anuvyklack/animation.nvim"
+    },
+    config = function()
+      require("config.windows").setup()
+    end
+  }
 
   if packer_bootstrap then
     require('packer').sync()

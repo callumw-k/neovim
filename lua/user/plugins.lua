@@ -32,6 +32,25 @@ return require('packer').startup(function(use)
   use 'mhartington/formatter.nvim'
   use { "folke/trouble.nvim", config = function() require("config.trouble").setup() end }
 
+  --  DAP
+  use {
+    "mfussenegger/nvim-dap",
+    opt = true,
+    event = "BufReadPre",
+    module = { "dap" },
+    wants = { "nvim-dap-virtual-text", "DAPInstall.nvim", "nvim-dap-ui", "nvim-dap-python", "which-key.nvim" },
+    requires = {
+      "Pocco81/DAPInstall.nvim",
+      "theHamsta/nvim-dap-virtual-text",
+      "rcarriga/nvim-dap-ui",
+      "nvim-telescope/telescope-dap.nvim",
+      { "jbyuki/one-small-step-for-vimkind", module = "osv" },
+    },
+    config = function()
+      require("config.dap").setup()
+    end,
+  }
+
   --Treesitte
   use { 'nvim-treesitter/nvim-treesitter', config = function() require("config.treesitter").setup() end }
   use { 'windwp/nvim-autopairs', config = function() require("config.autopairs").setup() end }
@@ -52,7 +71,7 @@ return require('packer').startup(function(use)
 
   --Telescope and telescope extensions
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', config = function() require("config.telescope").setup() end }
-  use "nvim-telescope/telescope-file-browser.nvim"
+  use "callumw-k/telescope-file-browser.nvim"
 
   -- Project
   use 'nvim-telescope/telescope-project.nvim'

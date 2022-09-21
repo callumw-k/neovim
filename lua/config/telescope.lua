@@ -9,6 +9,7 @@ local M = {}
 M.setup = function()
   telescope.setup({
     defaults = {
+      file_ignore_patterns = { "node_modules" },
       mappings = {
         i = {
           ["<C-n>"] = actions.cycle_history_next,

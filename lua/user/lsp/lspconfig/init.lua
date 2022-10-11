@@ -18,10 +18,10 @@ local on_attach = function(client, bufnr)
 
   require("user.lsp.autoformatting-config.init").setAutoFormatting(client, bufnr)
 
-  if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
-  end
+  -- if client.name == "tsserver" then
+  --   client.resolved_capabilities.document_formatting = false
+  --   client.resolved_capabilities.document_range_formatting = false
+  -- end
 
 end
 

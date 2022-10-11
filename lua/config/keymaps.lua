@@ -37,7 +37,9 @@ M.setup = function()
   keymap("n", "<Up>", ":resize -1<CR>", opts)
   keymap("n", "<Down>", ":resize +1<CR>", opts)
   -- Maximise Pane
-  keymap("n", "<leader>mm", '<Cmd>WindowsMaximize<CR>', opts)
+  keymap("n", "<leader>mp", '<Cmd>WindowsMaximize<CR>', opts)
+  --Close Code Action
+  keymap("n", "<leader>cc", ':cclose', opts)
 end
 
 return M

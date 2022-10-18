@@ -12,7 +12,7 @@ local lsp_formatting = function(bufnr)
   })
 end
 
-M.setAutoFormatting = function(client, bufnr)
+M.setFormatOnSave = function(client, bufnr)
   if client.supports_method("textDocument/formatting") then
     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
     vim.api.nvim_create_autocmd("BufWritePre", {

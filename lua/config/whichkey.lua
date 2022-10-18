@@ -7,6 +7,7 @@ local M = {}
 
 M.setup = function()
 
+  local builtin = require("telescope.builtin")
   local conf = {
     window = {
       border = "single", -- none, single, double, shadow
@@ -41,7 +42,13 @@ M.setup = function()
       S = { "<cmd>PackerStatus<cr>", "Status" },
       u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
-
+    f = {
+      name = "File Explorers",
+      n = { ":NvimTreeToggle<cr>", "Toggle NvimTree" },
+      p = { function()
+        builtin.find_files()
+      end, "Find Files" }
+    },
     g = {
       name = "Git",
       s = { "<cmd>Neogit<CR>", "Status" },

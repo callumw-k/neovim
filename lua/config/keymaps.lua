@@ -11,7 +11,7 @@ M.setup = function()
 
   vim.g.maplocalleader = " "
 
-  keymap("n", "<leader>fp", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
+  -- keymap("n", "<leader>fp", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
   keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
   keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
   keymap("n", "<leader>pv", "<cmd>lua require 'telescope'.extensions.file_browser.file_browser({ path = '%:p:h' })<CR>",
@@ -40,6 +40,7 @@ M.setup = function()
   keymap("n", "<leader>mp", '<Cmd>WindowsMaximize<CR>', opts)
   --Close Code Action
   keymap("n", "<leader>cc", ':cclose', opts)
+  
 end
 
 return M

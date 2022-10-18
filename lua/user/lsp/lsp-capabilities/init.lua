@@ -6,7 +6,7 @@ end
 local M = {}
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = _.update_capabilities(capabilities)
+capabilities = _.default_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true;
 
 -- Code actions

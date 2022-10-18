@@ -16,7 +16,7 @@ local on_attach = function(client, bufnr)
 
   keymaps.setBufferKeyMaps(bufnr)
 
-  require("user.lsp.autoformatting-config.init").setAutoFormatting(client, bufnr)
+  require("user.lsp.autoformatting-config.init").setFormatOnSave(client, bufnr)
 
   -- if client.name == "tsserver" then
   --   client.resolved_capabilities.document_formatting = false

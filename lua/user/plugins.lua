@@ -29,7 +29,6 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
-  use 'mhartington/formatter.nvim'
   use { "folke/trouble.nvim", config = function() require("config.trouble").setup() end }
 
   --Treesitte
@@ -53,6 +52,9 @@ return require('packer').startup(function(use)
   --Telescope and telescope extensions
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', config = function() require("config.telescope").setup() end }
   use "nvim-telescope/telescope-file-browser.nvim"
+  use { 'nvim-tree/nvim-tree.lua', tag = 'nightly',
+    config = function() require("config.nvim-tree").setup() end
+  }
 
   -- Project
   use 'nvim-telescope/telescope-project.nvim'

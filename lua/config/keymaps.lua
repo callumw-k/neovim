@@ -4,7 +4,7 @@ local opts = { noremap = true, silent = true }
 -- Shorten function name
 local keymap = vim.keymap.set
 
-M.setup = function()
+M.setKeymaps = function()
   --Remap space as leader key
   keymap("", "<Space>", "<Nop>", opts)
   vim.g.mapleader = " "
@@ -40,6 +40,8 @@ M.setup = function()
   keymap("n", "<leader>mp", '<Cmd>WindowsMaximize<CR>', opts)
   --Close Code Action
   keymap("n", "<leader>cc", ':cclose', opts)
+
+  require("config.lsp.config.keymaps").setGlobalLSPKeyMaps()
   
 end
 

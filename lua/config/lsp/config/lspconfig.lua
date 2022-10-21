@@ -1,5 +1,5 @@
-local keymaps = require("user.lsp.keymaps-config.init")
-local capabilities = require("user.lsp.lsp-capabilities.init").capabilities
+local keymaps = require("lua.config.lsp.config.keymaps")
+local capabilities = require("lua.config.lsp.config.lsp-capabilities").capabilities
 
 local lsp_ok, lspconfig = pcall(require, "lspconfig")
 if not lsp_ok then
@@ -8,7 +8,6 @@ end
 
 local M = {}
 
-keymaps.setGlobalLSPKeyMaps()
 
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
@@ -16,12 +15,7 @@ local on_attach = function(client, bufnr)
 
   keymaps.setBufferKeyMaps(bufnr)
 
-  require("user.lsp.autoformatting-config.init").setFormatOnSave(client, bufnr)
-
-  -- if client.name == "tsserver" then
-  --   client.resolved_capabilities.document_formatting = false
-  --   client.resolved_capabilities.document_range_formatting = false
-  -- end
+  require("config.lsp.config.autoformatting").setFormatOnSave(client, bufnr)
 
 end
 

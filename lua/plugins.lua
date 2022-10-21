@@ -26,9 +26,18 @@ return require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
 
   --LSP
-  use 'neovim/nvim-lspconfig'
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
+  use { 'neovim/nvim-lspconfig', config = function()
+    local servers = { "tailwindcss", "sumneko_lua", "tsserver", "omnisharp" }
+    require("config.lsp.config.lspconfig").createServers(servers)
+  end }
+  -- use 'williamboman/mason.nvim'
+  use { 'williamboman/mason.nvim', config = function()
+    require("config.lsp.config.mason").setup()
+  end }
+  use { 'williamboman/mason-lspconfig.nvim', config = function()
+    require("config.lsp.config.mason-lspconfig").setup()
+
+  end }
   use { "folke/trouble.nvim", config = function() require("config.trouble").setup() end }
 
   --Treesitte
@@ -71,8 +80,13 @@ return require('packer').startup(function(use)
   --Misc
   use { "folke/which-key.nvim", config = function() require("config.whichkey").setup() end }
   use { 'akinsho/toggleterm.nvim', config = function() require("config.toggleterm").setup() end }
-  use { "ggandor/leap.nvim" }
-  use { "numToStr/Comment.nvim" }
+  use { "ggandor/leap.nvim", config = function()
+    require("config.leap").setup()
+  end }
+  use { "numToStr/Comment.nvim" , config = function ()
+    require("comment").setup()
+    
+  end}
   use { "kyazdani42/nvim-web-devicons" }
   use { "folke/lsp-colors.nvim" }
   use { "lewis6991/impatient.nvim" }

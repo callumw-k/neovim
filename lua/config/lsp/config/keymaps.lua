@@ -1,7 +1,6 @@
 local M = {}
 local keymap = vim.keymap.set
 
-
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 M.setGlobalLSPKeyMaps = function()

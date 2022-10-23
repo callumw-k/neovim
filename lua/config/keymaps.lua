@@ -38,11 +38,11 @@ M.setKeymaps = function()
   keymap("n", "<Down>", ":resize +1<CR>", opts)
   -- Maximise Pane
   keymap("n", "<leader>mp", '<Cmd>WindowsMaximize<CR>', opts)
+
+  require("config.lsp.config.keymaps").setGlobalLSPKeyMaps()
   --Close Code Action
   keymap("n", "<leader>cc", ':cclose', opts)
 
-  require("config.lsp.config.keymaps").setGlobalLSPKeyMaps()
-  
 end
 
 return M

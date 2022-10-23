@@ -45,9 +45,14 @@ M.setup = function()
     f = {
       name = "File Explorers",
       n = { ":NvimTreeToggle<cr>", "Toggle NvimTree" },
+      s = { ":NvimTreeFocus<cr>", "Focus NvimTree"},
       p = { function()
         builtin.find_files()
       end, "Find Files" }
+    },
+    c = {
+      name = "Code Actions",
+      c = {":cclose<cr>", "Close CodeAction"}
     },
     g = {
       name = "Git",

@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 local M = {}
+
 M.setup = function()
   null_ls.setup({
     sources = {
@@ -11,8 +12,10 @@ M.setup = function()
         diagnostics_format = '[eslint] #{m}\n(#{c})'
       }),
       null_ls.builtins.formatting.prettierd,
+      null_ls.builtins.formatting.stylua,
       null_ls.builtins.code_actions.eslint_d
     },
   })
 end
+
 return M

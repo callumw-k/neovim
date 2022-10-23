@@ -1,5 +1,5 @@
-local keymaps = require("lua.config.lsp.config.keymaps")
-local capabilities = require("lua.config.lsp.config.lsp-capabilities").capabilities
+local keymaps = require("config.lsp.config.keymaps")
+local capabilities = require("config.lsp.config.lsp-capabilities").capabilities
 
 local lsp_ok, lspconfig = pcall(require, "lspconfig")
 if not lsp_ok then

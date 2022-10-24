@@ -36,7 +36,7 @@ return require("packer").startup(function(use)
 	use({
 		"simrat39/rust-tools.nvim",
 		config = function()
-			require("rust-tools").setup()
+			require("config.rust-tools").setup()
 		end,
 	})
 	-- use 'williamboman/mason.nvim'
@@ -171,7 +171,7 @@ return require("packer").startup(function(use)
 	use({
 		"numToStr/Comment.nvim",
 		config = function()
-			require("comment").setup()
+			require("config.comment").setup()
 		end,
 	})
 	use({ "kyazdani42/nvim-web-devicons" })

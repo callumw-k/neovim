@@ -1,8 +1,11 @@
 local M = {}
 
 M.setup = function()
-  local lualine = require('lualine')
-  lualine.setup()
+	local status_ok, _ = pcall(require, "lualine")
+	if not status_ok then
+		return
+	end
+	_.setup()
 end
 
 return M

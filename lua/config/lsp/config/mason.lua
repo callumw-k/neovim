@@ -1,12 +1,11 @@
-local ok, _ = pcall(require, "mason")
-if not ok then
-  return
-end
-
 local M = {}
 
 function M.setup()
-  _.setup()
+	local ok, _ = pcall(require, "mason")
+	if not ok then
+		return
+	end
+	_.setup()
 end
 
 return M

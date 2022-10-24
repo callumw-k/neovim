@@ -1,8 +1,11 @@
 local M = {}
 
 M.setup = function()
-  _ = require("leap")
-  _.set_default_keymaps()
+	local status_ok, _ = pcall(require, "leap")
+	if not status_ok then
+		return
+	end
+	_.set_default_keymaps()
 end
 
 return M

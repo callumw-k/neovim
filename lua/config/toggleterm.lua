@@ -9,9 +9,6 @@ function M.setup()
 	end
 
 	local shell = "pwsh.exe"
-	if vim.fn.has("macunix") then
-		shell = vim.o.shell
-	end
 	_.setup({
 		size = 20,
 		open_mapping = [[<c-\>]],

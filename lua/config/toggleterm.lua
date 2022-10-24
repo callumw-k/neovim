@@ -7,6 +7,11 @@ function M.setup()
 	if not ok then
 		return
 	end
+
+	local shell = "pwsh.exe"
+	if vim.fn.has("macunix") then
+		shell = vim.o.shell
+	end
 	_.setup({
 		size = 20,
 		open_mapping = [[<c-\>]],
@@ -19,7 +24,7 @@ function M.setup()
 		persist_size = true,
 		direction = "float",
 		close_on_exit = true,
-		shell = vim.o.shell,
+		shell = shell,
 		float_opts = {
 			border = "curved",
 			winblend = 0,

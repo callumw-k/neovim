@@ -4,7 +4,15 @@ M.setup = function()
 	if not ok then
 		return
 	end
-	_.setup()
+	_.setup({
+		"sumneko_lua",
+		"rust_analyzer",
+		"typescript-language-server",
+		"tailwindcss",
+		"codelldb",
+		"stylua",
+		"cssls",
+	})
 end
 
 return M

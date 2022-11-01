@@ -28,18 +28,10 @@ return require("packer").startup(function(use)
 	--LSP
 	use({
 		"neovim/nvim-lspconfig",
-		config = function()
-			local servers = { "tailwindcss", "sumneko_lua", "tsserver", "omnisharp", "cssls" }
-			require("config.lsp.config.lspconfig").createServers(servers)
-		end,
 	})
 	use({
 		"simrat39/rust-tools.nvim",
-		config = function()
-			require("config.rust-tools").setup()
-		end,
 	})
-	-- use 'williamboman/mason.nvim'
 	use({
 		"williamboman/mason.nvim",
 		config = function()

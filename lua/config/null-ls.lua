@@ -6,13 +6,16 @@ M.setup = function()
 		return
 	end
 	_.setup({
+		debug = true,
 		sources = {
 			_.builtins.diagnostics.eslint_d.with({
 				diagnostics_format = "[eslint] #{m}\n(#{c})",
 			}),
-			_.builtins.formatting.prettierd,
+			_.builtins.formatting.prettierd.with({
+				extra_filetypes = { "svelte" },
+			}),
 			_.builtins.formatting.stylua,
-			_.builtins.code_actions.eslint_d,
+			_.builtins.code_actions.eslint,
 		},
 	})
 end

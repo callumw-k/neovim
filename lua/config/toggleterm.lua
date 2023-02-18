@@ -8,7 +8,6 @@ function M.setup()
 		return
 	end
 
-	local shell = "pwsh.exe"
 	_.setup({
 		size = 20,
 		open_mapping = [[<c-\>]],
@@ -21,7 +20,6 @@ function M.setup()
 		persist_size = true,
 		direction = "float",
 		close_on_exit = true,
-		shell = shell,
 		float_opts = {
 			border = "curved",
 			winblend = 0,

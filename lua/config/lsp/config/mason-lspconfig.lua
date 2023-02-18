@@ -35,6 +35,24 @@ M.setup = function()
 		["rust_analyzer"] = function()
 			require("rust-tools").setup()
 		end,
+		["tsserver"] = function()
+			require("typescript").setup({
+				disable_commands = false, -- prevent the plugin from creating Vim commands
+				debug = false, -- enable debug logging for commands
+				go_to_source_definition = {
+					fallback = true, -- fall back to standard LSP definition on failure
+				},
+				server = { -- pass options to lspconfig's setup method
+					init_options = {
+						preferences = {
+							importModuleSpecifier = "relative",
+						},
+					},
+					capabilities = capabilities,
+					on_attach = on_attach,
+				},
+			})
+		end,
 	})
 end
 

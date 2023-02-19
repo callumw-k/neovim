@@ -43,11 +43,11 @@ M.setup = function()
 					fallback = true, -- fall back to standard LSP definition on failure
 				},
 				server = { -- pass options to lspconfig's setup method
-					init_options = {
-						preferences = {
-							importModuleSpecifier = "relative",
-						},
-					},
+--					init_options = {
+--						preferences = {
+--							importModuleSpecifier = "relative",
+--						},
+--					},
 					capabilities = capabilities,
 					on_attach = on_attach,
 				},

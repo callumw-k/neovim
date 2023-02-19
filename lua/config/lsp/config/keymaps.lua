@@ -29,8 +29,7 @@ M.setBufferKeyMaps = function(bufnr)
   keymap('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   keymap('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   keymap('n', 'gr', vim.lsp.buf.references, bufopts)
-  keymap('n', '<space>f', vim.lsp.buf.formatting, bufopts)
-
+  keymap('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 return M

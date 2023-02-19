@@ -8,7 +8,7 @@ M.setup = function()
 	_.setup({
 		debug = true,
 		sources = {
-			_.builtins.diagnostics.eslint_d.with({
+			_.builtins.diagnostics.eslint.with({
 				diagnostics_format = "[eslint] #{m}\n(#{c})",
 			}),
 			_.builtins.formatting.prettierd.with({

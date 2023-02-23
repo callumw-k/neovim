@@ -8,14 +8,15 @@ M.setup = function()
 	_.setup({
 		debug = true,
 		sources = {
-			_.builtins.diagnostics.eslint.with({
-				diagnostics_format = "[eslint] #{m}\n(#{c})",
-			}),
+			-- _.builtins.diagnostics.eslint_d.with({
+			-- 	diagnostics_format = "[eslint] #{m}\n(#{c})",
+			-- }),
 			_.builtins.formatting.prettierd.with({
 				extra_filetypes = { "svelte" },
 			}),
+			-- _.builtins.formatting.eslint_d,
 			_.builtins.formatting.stylua,
-			_.builtins.code_actions.eslint,
+			-- _.builtins.code_actions.eslint_d,
 		},
 	})
 end

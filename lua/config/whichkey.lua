@@ -29,8 +29,8 @@ M.setup = function()
 
 		b = {
 			name = "Buffer",
-			c = { "<Cmd>bd!<Cr>", "Close current buffer" },
-			D = { "<Cmd>%bd|e#|bd#<Cr>", "Delete all buffers" },
+			d = { "<cmd>bd!<cr>", "Close current buffer" },
+			D = { "<cmd>%bd<cr>", "Delete all buffers" },
 		},
 
 		z = {
@@ -44,7 +44,6 @@ M.setup = function()
 		f = {
 			name = "File Explorers",
 			n = { ":NvimTreeToggle<cr>", "Toggle NvimTree" },
-			s = { ":NvimTreeFocus<cr>", "Focus NvimTree" },
 			p = {
 				function()
 					builtin.find_files()

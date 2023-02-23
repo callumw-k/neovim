@@ -10,9 +10,9 @@ M.setup = function()
 		return
 	end
 
-	local keymaps = require("config.lsp.config.keymaps")
+	local keymaps = require("lsp.keymaps")
 
-	local capabilities = require("config.lsp.config.lsp-capabilities").capabilities
+	local capabilities = require("lsp.lsp-capabilities").capabilities
 
 	local on_attach = function(client, bufnr)
 		-- Enable completion triggered by <c-x><c-o>
@@ -20,10 +20,14 @@ M.setup = function()
 
 		keymaps.setBufferKeyMaps(bufnr)
 
-		require("config.lsp.config.autoformatting").setFormatOnSave(client, bufnr)
+		require("lsp.autoformatting").setFormatOnSave(client, bufnr)
 	end
 
-	mason_lspconfig.setup()
+	mason_lspconfig.setup({
+    ensure_installed = {
+      tsserver,
+    }
+  })
 
 	mason_lspconfig.setup_handlers({
 		function(lsp)

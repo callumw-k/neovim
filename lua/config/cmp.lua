@@ -59,7 +59,6 @@ M.setup = function()
 			{ name = "nvim_lsp_signature_help" },
 			{ name = "nvim_lua" },
 			{ name = "buffer" },
-			{ name = "vsnip" },
 			{ name = "path" },
 		},
 	})

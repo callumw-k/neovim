@@ -1,14 +1,20 @@
 return {
-  {
-    "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("lsp.mason-lspconfig").setup()
-    end,
-  },
+	{
+		"williamboman/mason.nvim",
+		opts = {
+			ensure_installed = {
+				"stylua",
+				"tsserver",
+				"prettierd",
+				"lua_ls",
+				"eslint",
+			},
+		},
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("lsp.mason-lspconfig").setup()
+		end,
+	},
 }

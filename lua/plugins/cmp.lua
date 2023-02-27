@@ -13,9 +13,6 @@ return {
 			"hrsh7th/vim-vsnip",
 			"ray-x/cmp-treesitter",
 		},
-		-- config = function(_, opts)
-		-- 	require("configs").setup(opts)
-		-- end,
 		opts = function()
 			local cmp = require("cmp")
 			cmp.setup.cmdline(":", {

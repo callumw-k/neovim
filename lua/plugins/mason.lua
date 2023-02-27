@@ -1,20 +1,13 @@
 return {
 	{
 		"williamboman/mason.nvim",
-		opts = {
-			ensure_installed = {
-				"stylua",
-				"tsserver",
-				"prettierd",
-				"lua_ls",
-				"eslint",
-			},
-		},
+		config = true,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("lsp.mason-lspconfig").setup()
 		end,
+		priority = 99,
 	},
 }

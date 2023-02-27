@@ -24,10 +24,12 @@ M.setup = function()
 	end
 
 	mason_lspconfig.setup({
-    ensure_installed = {
-      tsserver,
-    }
-  })
+		ensure_installed = {
+			"tsserver",
+			"lua_ls",
+			"eslint",
+		},
+	})
 
 	mason_lspconfig.setup_handlers({
 		function(lsp)

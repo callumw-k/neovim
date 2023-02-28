@@ -1,9 +1,9 @@
 return {
 	"pwntester/octo.nvim",
-	dependancies = {
+	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",
-		"kyazdani42/nvim-web-devicons",
+		-- "kyazdani42/nvim-web-devicons",
 	},
 	config = true,
 }

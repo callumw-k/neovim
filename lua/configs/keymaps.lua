@@ -7,19 +7,23 @@ local keymap = vim.keymap.set
 M.setKeymaps = function()
 	--Remap space as leader key
 	keymap("", "<Space>", "<Nop>", opts)
-  vim.g.mapleader = " "
-  vim.g.maplocalleader = " "
-
+	vim.g.mapleader = " "
+	vim.g.maplocalleader = " "
 
 	-- keymap("n", "<leader>fp", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
-	keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
-	keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
-	keymap(
-		"n",
-		"<leader>pv",
-		"<cmd>lua require 'telescope'.extensions.file_browser.file_browser({ path = '%:p:h' })<CR>",
-		opts
-	)
+	-- keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
+	-- keymap("n", "<leader>fg", function()
+	-- 	require("telescope.builtin").live_grep()
+	-- end, opts)
+	keymap("n", "<leader>fbs", function()
+		require("telescope.builtin").current_buffer_fuzzy_find()
+	end, opts)
+	-- keymap(
+	-- 	"n",
+	-- 	"<leader>pv",
+	-- 	"<cmd>lua require 'telescope'.extensions.file_browser.file_browser({ path = '%:p:h' })<CR>",
+	-- 	opts
+	-- )
 	keymap("n", "<leader>fr", ":lua require'telescope'.extensions.project.project{}<CR>", opts)
 
 	-- Better window navigation
@@ -40,8 +44,8 @@ M.setKeymaps = function()
 	keymap("n", "<Right>", ":vertical resize -1<CR>", opts)
 	keymap("n", "<Up>", ":resize -1<CR>", opts)
 	keymap("n", "<Down>", ":resize +1<CR>", opts)
-	-- Maximise Pane
-	keymap("n", "<leader>mp", "<Cmd>WindowsMaximize<CR>", opts)
+	-- -- Maximise Pane
+	-- keymap("n", "<leader>mp", "<Cmd>WindowsMaximize<CR>", opts)
 
 	require("lsp.keymaps").setGlobalLSPKeyMaps()
 	--Close Code Action

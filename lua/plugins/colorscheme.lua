@@ -1,6 +1,15 @@
 return {
 	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		config = function()
+			-- require("catppuccin").setup({ flavour = "frappe" })
+			vim.cmd.colorscheme("catppuccin")
+		end,
+	},
+	{
 		"navarasu/onedark.nvim",
+		enabled = false,
 		config = function()
 			local onedark = require("onedark")
 			onedark.setup({

@@ -23,6 +23,8 @@ M.setup = function()
 		require("lsp.autoformatting").setFormatOnSave(client, bufnr)
 	end
 
+	require("neodev").setup()
+
 	mason_lspconfig.setup({
 		ensure_installed = {
 			"tsserver",

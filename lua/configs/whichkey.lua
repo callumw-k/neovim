@@ -26,29 +26,44 @@ M.setup = function()
 	local mappings = {
 		["w"] = { "<cmd>update!<CR>", "Save" },
 		["q"] = { "<cmd>q!<CR>", "Quit" },
-
 		b = {
 			name = "Buffer",
 			d = { "<cmd>bd!<cr>", "Close current buffer" },
 			D = { "<cmd>%bd<cr>", "Delete all buffers" },
+			s = {
+				function()
+					builtin.current_buffer_fuzzy_find()
+				end,
+				"Search current buffer",
+			},
 		},
-
-		z = {
-			name = "Packer",
-			c = { "<cmd>PackerCompile<cr>", "Compile" },
-			i = { "<cmd>PackerInstall<cr>", "Install" },
-			s = { "<cmd>PackerSync<cr>", "Sync" },
-			S = { "<cmd>PackerStatus<cr>", "Status" },
-			u = { "<cmd>PackerUpdate<cr>", "Update" },
+		p = {
+			v = {
+				function()
+					require("telescope").extensions.file_browser.file_browser({ path = "%:p:h" })
+				end,
+				"File browser (telescope)",
+			},
 		},
 		f = {
-			name = "File Explorers",
 			n = { ":NvimTreeToggle<cr>", "Toggle NvimTree" },
+			b = {
+				function()
+					builtin.buffers()
+				end,
+				"Search open buffers",
+			},
 			p = {
 				function()
 					builtin.find_files()
 				end,
-				"Find Files",
+				"Fuzzy search files",
+			},
+		},
+		m = {
+			p = {
+				":WindowsMaximize<cr>",
+				"Maximise Window",
 			},
 		},
 		c = {

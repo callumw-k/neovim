@@ -5,7 +5,7 @@ return {
 			require("nvim-treesitter.configs").setup(opts)
 		end,
 		opts = {
-			ensure_installed = { "tsx", "typescript", "javascript", "python", "rust", "lua", "css", "v" },
+			ensure_installed = { "tsx", "typescript", "javascript", "python", "rust", "lua", "css", "regex" },
 			auto_install = true,
 			highlight = {
 				enable = true, -- false will disable the whole extension

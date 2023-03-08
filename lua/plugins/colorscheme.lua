@@ -1,5 +1,12 @@
 return {
 	{
+		enabled = false,
+		"rebelot/kanagawa.nvim",
+		config = function()
+			vim.cmd.colorscheme("kanagawa")
+		end,
+	},
+	{
 		"catppuccin/nvim",
 		name = "catppuccin",
 		config = function()

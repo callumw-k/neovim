@@ -13,19 +13,6 @@ return {
 	{
 		"jose-elias-alvarez/typescript.nvim",
 	},
-	{
-		"windwp/nvim-autopairs",
-		config = function()
-			require("configs.autopairs").setup()
-		end,
-	},
-	{
-		"windwp/nvim-ts-autotag",
-		event = "InsertEnter",
-		config = function()
-			require("nvim-ts-autotag").setup({ enable = true })
-		end,
-	},
 
 	--Telescope and telescope extensions
 	{

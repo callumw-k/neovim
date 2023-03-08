@@ -4,6 +4,7 @@ M.setup = function()
 	if not ok then
 		return
 	end
+	local m = ""
 
 	local lsp_ok, lspconfig = pcall(require, "lspconfig")
 	if not lsp_ok then
@@ -32,6 +33,22 @@ M.setup = function()
 			"eslint",
 		},
 	})
+
+	-- vim.diagnostic.config({
+	-- 	virtual_text = false,
+	-- 	signs = true,
+	-- 	float = {
+	-- 		border = "single",
+	-- 		format = function(diagnostic)
+	-- 			return string.format(
+	-- 				"%s (%s) [%s]",
+	-- 				diagnostic.message,
+	-- 				diagnostic.source,
+	-- 				diagnostic.code or diagnostic.user_data.lsp.code
+	-- 			)
+	-- 		end,
+	-- 	},
+	-- })
 
 	mason_lspconfig.setup_handlers({
 		function(lsp)

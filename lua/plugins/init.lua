@@ -13,21 +13,6 @@ return {
 	{
 		"jose-elias-alvarez/typescript.nvim",
 	},
-
-	--Telescope and telescope extensions
-	{
-		"nvim-telescope/telescope.nvim",
-		config = function()
-			require("configs.telescope").setup()
-		end,
-	},
-	"nvim-telescope/telescope-file-browser.nvim",
-
-	-- Project
-	"nvim-telescope/telescope-project.nvim",
-
-	--Theming
-
 	--UI
 	{
 		"nvim-lualine/lualine.nvim",

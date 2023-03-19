@@ -12,6 +12,7 @@ return {
 			"hrsh7th/cmp-vsnip",
 			"hrsh7th/vim-vsnip",
 			"ray-x/cmp-treesitter",
+			"David-Kunz/cmp-npm",
 		},
 		opts = function()
 			local cmp = require("cmp")

@@ -25,13 +25,7 @@ M.setup = function()
 
 	require("neodev").setup()
 
-	mason_lspconfig.setup({
-		ensure_installed = {
-			"tsserver",
-			"lua_ls",
-			"eslint",
-		},
-	})
+	mason_lspconfig.setup()
 
 	mason_lspconfig.setup_handlers({
 		function(lsp)

@@ -9,7 +9,7 @@ return {
 				-- 	diagnostics_format = "[eslint] #{m}\n(#{c})",
 				-- }),
 				null_ls.builtins.formatting.prettierd.with({
-					extra_filetypes = { "svelte" },
+					extra_filetypes = { "svelte", "vue", "astro" },
 				}),
 				-- _.builtins.formatting.eslint_d,
 				null_ls.builtins.formatting.stylua,

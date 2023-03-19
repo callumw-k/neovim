@@ -86,12 +86,13 @@ return {
 					end, { "i", "s" }),
 				}),
 				sources = {
-					{ name = "nvim_lsp" },
-					{ name = "treesitter" },
+					{ name = "nvim_lsp", priority = 1000 },
+					{ name = "buffer", priority = 750 },
+					{ name = "path", priority = 500 },
+					{ name = "treesitter", priority = 250 },
+					{ name = "vsnip" },
 					{ name = "nvim_lsp_signature_help" },
 					{ name = "nvim_lua" },
-					{ name = "buffer" },
-					{ name = "path" },
 				},
 			}
 		end,

@@ -25,6 +25,6 @@ capabilities.textDocument.completion.completionItem = {
 	},
 }
 
-M.capabilities = capabilities
+M = capabilities
 
 return M

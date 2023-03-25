@@ -1,5 +1,5 @@
 require("defaults.keymaps").setup()
-require("defaults.keymaps").setup()
+require("defaults.options").setup()
 
 --initialise lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

@@ -55,7 +55,14 @@ M.setup = function()
 			})
 		end,
 		["rust_analyzer"] = function()
-			require("rust-tools").setup()
+			require("rust-tools").setup({
+				server = {
+					on_attach = function(_, bufnr)
+						vim.keymap.set("n", "<C-space>", _.hover_actions.hover_actions, { buffer = bufnr })
+						vim.keymap.set("n", "<Leader>a", _.code_action_group.code_action_group, { buffer = bufnr })
+					end,
+				},
+			})
 		end,
 		["tsserver"] = function()
 			require("typescript").setup({

@@ -1,14 +1,7 @@
-local M = {}
-
 vim.cmd('autocmd TermEnter term://*toggleterm#* tnoremap <silent><c-\\> <Cmd>exe v:count1 . "ToggleTerm"<CR>')
-
-function M.setup()
-	local ok, _ = pcall(require, "toggleterm")
-	if not ok then
-		return
-	end
-
-	_.setup({
+return {
+	"akinsho/toggleterm.nvim",
+  opts = {
 		size = 20,
 		open_mapping = [[<c-\>]],
 		hide_numbers = true,
@@ -29,7 +22,5 @@ function M.setup()
 				background = "Normal",
 			},
 		},
-	})
-end
-
-return M
+	}
+}

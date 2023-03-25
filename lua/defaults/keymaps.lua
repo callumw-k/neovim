@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 
 local keymap = vim.keymap.set
 
-M.setKeymaps = function()
+M.setup = function()
 	keymap("", "<Space>", "<Nop>", opts)
 	vim.g.mapleader = " "
 	vim.g.maplocalleader = " "

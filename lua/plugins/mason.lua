@@ -50,11 +50,12 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       local mason_lspconfig = require("mason-lspconfig")
-      local lspconfig = require('lspconfig')
+      local lspconfig = require("lspconfig")
       local capabilities = require("lsp.lsp-capabilities")
 
       attach_buffer_keymaps()
 
+      mason_lspconfig.setup()
       mason_lspconfig.setup_handlers({
         function(lsp)
           lspconfig[lsp].setup({
@@ -66,7 +67,12 @@ return {
             server = {
               on_attach = function(_, bufnr)
                 vim.keymap.set("n", "<C-space>", _.hover_actions.hover_actions, { buffer = bufnr })
-                vim.keymap.set("n", "<Leader>a", _.code_action_group.code_action_group, { buffer = bufnr })
+                vim.keymap.set(
+                  "n",
+                  "<Leader>a",
+                  _.code_action_group.code_action_group,
+                  { buffer = bufnr }
+                )
               end,
             },
           })

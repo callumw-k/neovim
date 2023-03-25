@@ -1,13 +1,14 @@
 return {
-	{
-		"williamboman/mason.nvim",
-		config = true,
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("lsp.mason-lspconfig").setup()
-		end,
-		priority = 99,
-	},
+  {
+    "williamboman/mason.nvim",
+    config = true,
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup()
+      require("lsp.setup-language-servers").setup()
+    end,
+    priority = 50,
+  },
 }

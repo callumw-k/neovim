@@ -20,14 +20,7 @@ return {
 			require("configs.lualine").setup()
 		end,
 	},
-
 	--Misc
-	{
-		"folke/which-key.nvim",
-		config = function()
-			require("configs.whichkey").setup()
-		end,
-	},
 	{
 		"akinsho/toggleterm.nvim",
 		config = function()

@@ -51,15 +51,17 @@ return {
 		config = function()
 			local mason_lspconfig = require("mason-lspconfig")
 			local lspconfig = require("lspconfig")
-			local capabilities = require("lsp.lsp-capabilities")
+			-- local capabilities = require("plugins.lsp.capabilities")
+			local capabilities =
+				require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 			attach_buffer_keymaps()
 
 			mason_lspconfig.setup()
 			mason_lspconfig.setup_handlers({
-				function(lsp)
-					lspconfig[lsp].setup({
-						capabilities = capabilities,
+				function(server)
+					lspconfig[server].setup({
+						capabilities = vim.deepcopy(capabilities),
 					})
 				end,
 				["rust_analyzer"] = function()

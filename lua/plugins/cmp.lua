@@ -9,8 +9,7 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
-			"hrsh7th/cmp-vsnip",
-			"hrsh7th/vim-vsnip",
+			"L3MON4D3/LuaSnip",
 			"ray-x/cmp-treesitter",
 			"David-Kunz/cmp-npm",
 		},
@@ -39,13 +38,12 @@ return {
 				},
 			})
 			return {
+				completion = {
+					completeopt = "menu,menuone,noinsert",
+				},
 				snippet = {
-					-- REQUIRED - you must specify a snippet engine
 					expand = function(args)
-						vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-						-- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-						-- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-						-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+						require("luasnip").lsp_expand(args.body)
 					end,
 				},
 				formatting = {
@@ -53,7 +51,7 @@ return {
 						vim_item.menu = ({
 							nvim_lsp = "[LSP]",
 							buffer = "[Buffer]",
-							-- luasnip = "[Snip]",
+							luasnip = "[Snip]",
 							-- nvim_lua = "[Lua]",
 							treesitter = "[Treesitter]",
 							path = "[Path]",
@@ -88,10 +86,9 @@ return {
 				}),
 				sources = {
 					{ name = "nvim_lsp", priority = 1000 },
+					{ name = "luasnip", priority = 250 },
 					{ name = "buffer", priority = 750 },
 					{ name = "path", priority = 500 },
-					{ name = "treesitter", priority = 250 },
-					{ name = "vsnip" },
 					{ name = "nvim_lsp_signature_help" },
 					{ name = "nvim_lua" },
 				},

@@ -52,14 +52,14 @@ return {
 			local mason_lspconfig = require("mason-lspconfig")
 			local lspconfig = require("lspconfig")
 			-- local capabilities = require("plugins.lsp.capabilities")
-			local capabilities =
-				require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-			attach_buffer_keymaps()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities(
+				vim.lsp.protocol.make_client_capabilities()
+			)
 
 			mason_lspconfig.setup()
 			mason_lspconfig.setup_handlers({
 				function(server)
+					attach_buffer_keymaps()
 					lspconfig[server].setup({
 						capabilities = vim.deepcopy(capabilities),
 					})
@@ -79,20 +79,42 @@ return {
 						},
 					})
 				end,
+				["volar"] = function()
+					lspconfig.volar.setup({
+						capabilities = vim.tbl_deep_extend("force", capabilities, {
+							textDocument = {
+								completion = {
+									completionItem = {
+										snippetSupport = true,
+									},
+								},
+							},
+						}),
+						settings = {
+							volar = {
+								formatting = {
+									defaultTagNameCase = "kebab",
+									defaultAttrNameCase = "kebab",
+								},
+							},
+						},
+					})
+				end,
 				["tsserver"] = function()
 					require("typescript").setup({
-						disable_commands = false,
-						debug = false,
-						go_to_source_definition = {
-							fallback = true,
-						},
+						-- disable_commands = false,
+						-- debug = false,
+						-- go_to_source_definition = {
+						--   fallback = true,
+						-- },
 						server = {
-							capabilities = capabilities,
+							capabilities = vim.deepcopy(capabilities),
 						},
 					})
 				end,
 				["eslint"] = function()
 					lspconfig.eslint.setup({
+						capabilities = vim.deepcopy(capabilities),
 						on_attach = function(_, bufnr)
 							vim.api.nvim_create_autocmd("BufWritePre", {
 								buffer = bufnr,

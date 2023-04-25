@@ -29,14 +29,6 @@ return {
           "Search current buffer",
         },
       },
-      p = {
-        v = {
-          function()
-            require("telescope").extensions.file_browser.file_browser({ path = "%:p:h" })
-          end,
-          "File browser (telescope)",
-        },
-      },
       f = {
         n = { ":NvimTreeToggle<cr>", "Toggle NvimTree" },
         b = {

@@ -8,14 +8,6 @@ M.setup = function()
 	vim.g.mapleader = " "
 	vim.g.maplocalleader = " "
 
-	keymap("n", "<leader>fg", function()
-		require("telescope.builtin").live_grep()
-	end, opts)
-	keymap("n", "<leader>fbs", function()
-		require("telescope.builtin").current_buffer_fuzzy_find()
-	end, opts)
-	keymap("n", "<leader>fr", ":lua require'telescope'.extensions.project.project{}<CR>", opts)
-
 	-- Better window navigation
 	keymap("n", "<C-h>", "<C-w>h", opts)
 	keymap("n", "<C-j>", "<C-w>j", opts)
@@ -36,9 +28,6 @@ M.setup = function()
 	keymap("n", "<Down>", ":resize +1<CR>", opts)
 	-- -- Maximise Pane
 	-- keymap("n", "<leader>mp", "<Cmd>WindowsMaximize<CR>", opts)
-
-	--Close Code Action
-	keymap("n", "<leader>cc", ":cclose", opts)
 
 	keymap("n", "<space>e", vim.diagnostic.open_float, opts)
 	keymap("n", "[d", vim.diagnostic.goto_prev, opts)

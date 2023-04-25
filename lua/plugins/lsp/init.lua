@@ -23,9 +23,7 @@ local attach_buffer_keymaps = function()
 			vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
 
 			vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, opts)
-			vim.keymap.set("n", "gr", function()
-				require("telescope.builtin").lsp_references({})
-			end, opts)
+			vim.keymap.set("n", "gr", "<cmd>TroubleToggle lsp_references<cr>", opts)
 			vim.keymap.set("n", "<space>ff", function()
 				vim.lsp.buf.format({ async = true })
 			end, opts)
@@ -39,22 +37,18 @@ end
 return {
 	{
 		dependencies = {
-			{
-				"williamboman/mason.nvim",
-				config = true,
-			},
-			"neovim/nvim-lspconfig",
+			{ "folke/neodev.nvim", config = true },
+			{ "williamboman/mason.nvim", config = true },
+			"williamboman/mason-lspconfig.nvim",
 			"simrat39/rust-tools.nvim",
 			"jose-elias-alvarez/typescript.nvim",
 		},
-		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
 		config = function()
 			local mason_lspconfig = require("mason-lspconfig")
 			local lspconfig = require("lspconfig")
-			-- local capabilities = require("plugins.lsp.capabilities")
-			local capabilities = require("cmp_nvim_lsp").default_capabilities(
-				vim.lsp.protocol.make_client_capabilities()
-			)
+			local capabilities =
+				require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 			mason_lspconfig.setup()
 			mason_lspconfig.setup_handlers({
@@ -102,11 +96,6 @@ return {
 				end,
 				["tsserver"] = function()
 					require("typescript").setup({
-						-- disable_commands = false,
-						-- debug = false,
-						-- go_to_source_definition = {
-						--   fallback = true,
-						-- },
 						server = {
 							capabilities = vim.deepcopy(capabilities),
 						},

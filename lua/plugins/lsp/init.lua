@@ -47,8 +47,9 @@ return {
 		config = function()
 			local mason_lspconfig = require("mason-lspconfig")
 			local lspconfig = require("lspconfig")
-			local capabilities =
-				require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+			local capabilities = require("cmp_nvim_lsp").default_capabilities(
+				vim.lsp.protocol.make_client_capabilities()
+			)
 
 			mason_lspconfig.setup()
 			mason_lspconfig.setup_handlers({
@@ -73,31 +74,18 @@ return {
 						},
 					})
 				end,
-				["volar"] = function()
-					lspconfig.volar.setup({
-						capabilities = vim.tbl_deep_extend("force", capabilities, {
-							textDocument = {
-								completion = {
-									completionItem = {
-										snippetSupport = true,
-									},
-								},
-							},
-						}),
-						settings = {
-							volar = {
-								formatting = {
-									defaultTagNameCase = "kebab",
-									defaultAttrNameCase = "kebab",
-								},
-							},
-						},
+				["denols"] = function()
+					lspconfig.denols.setup({
+						root_dir = lspconfig.util.root_pattern("deno.json"),
+						capabilities = vim.deepcopy(capabilities),
 					})
 				end,
 				["tsserver"] = function()
 					require("typescript").setup({
 						server = {
+							root_dir = lspconfig.util.root_pattern("package.json"),
 							capabilities = vim.deepcopy(capabilities),
+							single_file_support = false,
 						},
 					})
 				end,

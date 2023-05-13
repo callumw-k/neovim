@@ -41,7 +41,7 @@ return {
 			})
 			return {
 				completion = { completeopt = "menu,menuone,noinsert", keyword_length = 1 },
-				experimental = { native_menu = false, ghost_text = true },
+				experimental = { native_menu = false, ghost_text = false },
 				snippet = {
 					expand = function(args)
 						require("luasnip").lsp_expand(args.body)

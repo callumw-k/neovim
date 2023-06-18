@@ -17,6 +17,7 @@ return {
 		opts = function()
 			local cmp = require("cmp")
 			local lspkind = require("lspkind")
+
 			cmp.setup.cmdline(":", {
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = cmp.config.sources({

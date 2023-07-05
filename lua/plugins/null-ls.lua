@@ -2,10 +2,10 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local lsp_formatting = function(bufnr)
 	vim.lsp.buf.format({
+		bufnr = bufnr,
 		filter = function(client)
 			return client.name == "null-ls"
 		end,
-		bufnr = bufnr,
 	})
 end
 
@@ -14,13 +14,12 @@ return {
 	opts = function()
 		local null_ls = require("null-ls")
 		return {
-			debug = true,
 			sources = {
 				null_ls.builtins.formatting.prettierd.with({
 					extra_filetypes = { "svelte", "vue", "astro" },
 				}),
 				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.clang_format,
+				-- null_ls.builtins.formatting.clang_format,
 				null_ls.builtins.formatting.rustfmt,
 			},
 			on_attach = function(client, bufnr)

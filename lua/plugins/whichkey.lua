@@ -21,12 +21,6 @@ return {
 				name = "Buffer",
 				d = { "<cmd>bd!<cr>", "Close current buffer" },
 				D = { "<cmd>%bd<cr>", "Delete all buffers" },
-				s = {
-					function()
-						builtin.current_buffer_fuzzy_find()
-					end,
-					"Search current buffer",
-				},
 			},
 			f = {
 				n = { ":NvimTreeToggle<cr>", "Toggle NvimTree" },
@@ -35,6 +29,12 @@ return {
 						builtin.buffers()
 					end,
 					"Search open buffers",
+				},
+				s = {
+					function()
+						builtin.current_buffer_fuzzy_find()
+					end,
+					"Search current buffer",
 				},
 				p = {
 					function()

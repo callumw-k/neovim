@@ -1,43 +1,43 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		version = false,
+		tag = "0.1.2",
 		dependencies = {
 			"nvim-telescope/telescope-file-browser.nvim",
 			"nvim-telescope/telescope-project.nvim",
 		},
-		keys = {
-			{
-				"n",
-				"<leader>fs",
-				function()
-					require("telescope.builtin").current_buffer_fuzzy_find()
-				end,
-				desc = "Fuzzy find in buffer",
-			},
-			{
-				"<leader>fr",
-				function()
-					require("telescope").extensions.project.project({})
-				end,
-				desc = "Jump between projects",
-			},
-			{
-				"<leader>fg",
-				function()
-					require("telescope.builtin").live_grep()
-				end,
-				desc = "Search text",
-			},
-			{
-				"<leader>pv",
-
-				function()
-					require("telescope").extensions.file_browser.file_browser({ path = "%:p:h" })
-				end,
-				desc = "File browser (telescope)",
-			},
-		},
+		-- keys = {
+		-- 	{
+		-- 		"n",
+		-- 		"<leader>fh",
+		-- 		function()
+		-- 			require("telescope.builtin").current_buffer_fuzzy_find()
+		-- 		end,
+		-- 		desc = "Fuzzy find in buffer",
+		-- 	},
+		-- 	{
+		-- 		"<leader>fr",
+		-- 		function()
+		-- 			require("telescope").extensions.project.project({})
+		-- 		end,
+		-- 		desc = "Jump between projects",
+		-- 	},
+		-- 	{
+		-- 		"<leader>fg",
+		-- 		function()
+		-- 			require("telescope.builtin").live_grep()
+		-- 		end,
+		-- 		desc = "Search text",
+		-- 	},
+		-- {
+		-- 	"<leader>pv",
+		--
+		-- 	function()
+		-- 		require("telescope").extensions.file_browser.file_browser({ path = "%:p:h" })
+		-- 	end,
+		-- 	desc = "File browser (telescope)",
+		-- },
+		-- },
 		opts = function()
 			local telescope = require("telescope")
 			local actions = require("telescope.actions")

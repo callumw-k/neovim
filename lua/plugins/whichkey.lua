@@ -38,7 +38,7 @@ return {
 				},
 				p = {
 					function()
-						builtin.find_files()
+						require("fzf-lua").files()
 					end,
 					"Fuzzy search files",
 				},

@@ -4,6 +4,7 @@ return {
 		if require("defaults.utils").is_windows() then
 			return false
 		end
+		return true
 	end,
 	dependencies = { "nvim-tree/nvim-web-devicons", "folke/which-key.nvim" },
 	config = function()

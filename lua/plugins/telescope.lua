@@ -11,12 +11,6 @@ return {
 
 			local mappings = {
 				f = {
-					p = {
-						function()
-							builtin.find_files()
-						end,
-						"Fuzzy search files",
-					},
 					b = {
 						function()
 							builtin.buffers()
@@ -37,6 +31,14 @@ return {
 					},
 				},
 			}
+			if require("defaults.utils").is_windows() then
+				mappings.f.p = {
+					function()
+						builtin.find_files()
+					end,
+					"Fuzzy search files",
+				}
+			end
 
 			require("defaults.utils").which_key_register(mappings)
 			telescope.setup(opts)

@@ -3,20 +3,11 @@ return {
 	config = function(_, lsp_opts)
 		local which_key = require("which-key")
 
-		local builtin = require("telescope.builtin")
-
-		local opts = {
-			mode = "n", -- Normal mode
-			prefix = "<leader>",
-			buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-			silent = true, -- use `silent` when creating keymaps
-			noremap = true, -- use `noremap` when creating keymaps
-			nowait = false, -- use `nowait` when creating keymaps
-		}
 
 		local mappings = {
 			["w"] = { "<cmd>update!<CR>", "Save" },
 			["q"] = { "<cmd>q!<CR>", "Quit" },
+
 			b = {
 				name = "Buffer",
 				d = { "<cmd>bd!<cr>", "Close current buffer" },
@@ -24,30 +15,6 @@ return {
 			},
 			f = {
 				n = { ":NvimTreeToggle<cr>", "Toggle NvimTree" },
-				b = {
-					function()
-						builtin.buffers()
-					end,
-					"Search open buffers",
-				},
-				s = {
-					function()
-						builtin.current_buffer_fuzzy_find()
-					end,
-					"Search current buffer",
-				},
-				p = {
-					function()
-						builtin.find_files()
-					end,
-					"Fuzzy search files",
-				},
-			},
-			m = {
-				p = {
-					":WindowsMaximize<cr>",
-					"Maximise Window",
-				},
 			},
 			c = {
 				name = "Code Actions",
@@ -59,7 +26,7 @@ return {
 			},
 		}
 		which_key.setup(lsp_opts)
-		which_key.register(mappings, opts)
+		which_key.register(mappings, require("defaults.utils").which_key_opts)
 	end,
 	opts = {
 		window = {

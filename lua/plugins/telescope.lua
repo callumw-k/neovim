@@ -3,13 +3,46 @@ return {
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.2",
 		dependencies = {
-			{ "nvim-lua/plenary.nvim" },
-			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+			{ "nvim-lua/plenary.nvim", "folke/which-key.nvim" },
 		},
-		config = function()
+		config = function(_, opts)
 			local telescope = require("telescope")
+			local builtin = require("telescope.builtin")
+
+			local mappings = {
+				f = {
+					p = {
+						function()
+							builtin.find_files()
+						end,
+						"Fuzzy search files",
+					},
+					b = {
+						function()
+							builtin.buffers()
+						end,
+						"Search open buffers",
+					},
+					g = {
+						function()
+							builtin.live_grep()
+						end,
+						"Search string",
+					},
+					s = {
+						function()
+							builtin.current_buffer_fuzzy_find()
+						end,
+						"Search current buffer",
+					},
+				},
+			}
+
+			require("defaults.utils").which_key_register(mappings)
+			telescope.setup(opts)
+		end,
+		opts = function()
 			local actions = require("telescope.actions")
-			telescope.load_extension("fzf")
 			return {
 				defaults = {
 					file_ignore_patterns = { "node_modules" },

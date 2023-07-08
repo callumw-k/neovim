@@ -1,3 +1,11 @@
+local shell = function()
+	if require('defaults.utils').is_windows() then
+		return 'pwsh.exe'
+	else
+		return vim.o.shell
+	end
+end
+
 return {
 	"akinsho/toggleterm.nvim",
 	version = "*",
@@ -13,6 +21,7 @@ return {
 			start_in_insert = true,
 			insert_mappings = true,
 			persist_size = true,
+			shell = shell(),
 			direction = "float",
 			close_on_exit = true,
 			float_opts = {

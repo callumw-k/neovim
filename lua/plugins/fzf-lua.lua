@@ -1,9 +1,23 @@
 return {
 	"ibhagwan/fzf-lua",
-	-- optional for icon support
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	enabled = function()
+		if require("defaults.utils").is_windows() then
+			return false
+		end
+	end,
+	dependencies = { "nvim-tree/nvim-web-devicons", "folke/which-key.nvim" },
 	config = function()
-		-- calling `setup` is optional for customization
+		local mappings = {
+			f = {
+				p = {
+					function()
+						require("fzf-lua").files()
+					end,
+					"Fuzzy search files",
+				},
+			},
+		}
+		require("defaults.utils").which_key_register(mappings)
 		require("fzf-lua").setup({ "telescope" })
 	end,
 }

@@ -30,11 +30,23 @@ return {
 					end,
 					"Search open buffers",
 				},
+				r = {
+					function()
+						builtin.live_grep()
+					end,
+					"Search string",
+				},
 				s = {
 					function()
 						builtin.current_buffer_fuzzy_find()
 					end,
 					"Search current buffer",
+				},
+				y = {
+					function()
+						builtin.find_files()
+					end,
+					"Fuzzy search files",
 				},
 				p = {
 					function()

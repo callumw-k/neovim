@@ -1,13 +1,26 @@
 return {
 	"stevearc/oil.nvim",
-	config = true,
-	-- keys = {
-	-- 	{
-	-- 		"n",
-	-- 		"-",
-	-- 		require("oil").open,
-	-- 		{ desc = "Open parent directory" },
-	-- 	},
-	-- },
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = {
+		"folke/which-key.nvim",
+		"nvim-tree/nvim-web-devicons",
+	},
+
+	config = function()
+		local mappings = {
+			p = {
+				v = {
+					function()
+						require("oil").open()
+					end,
+					"Open file explorer",
+				},
+			},
+		}
+		require("defaults.utils").which_key_register(mappings)
+		require("oil").setup({
+			view_options = {
+				show_hidden = true,
+			},
+		})
+	end,
 }

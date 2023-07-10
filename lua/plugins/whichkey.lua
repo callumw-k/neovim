@@ -3,7 +3,6 @@ return {
 	config = function(_, lsp_opts)
 		local which_key = require("which-key")
 
-
 		local mappings = {
 			["w"] = { "<cmd>update!<CR>", "Save" },
 			["q"] = { "<cmd>q!<CR>", "Quit" },

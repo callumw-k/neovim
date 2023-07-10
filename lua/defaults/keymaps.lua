@@ -33,9 +33,6 @@ M.setup = function()
 	keymap("n", "[d", vim.diagnostic.goto_prev, opts)
 	keymap("n", "]d", vim.diagnostic.goto_next, opts)
 	keymap("n", "<space>q", vim.diagnostic.setloclist, opts)
-	keymap("n", "<leader>pv", function()
-		require("oil").open()
-	end, { desc = "Open parent directory" })
 end
 
 return M

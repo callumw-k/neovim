@@ -10,18 +10,23 @@ local lsp_formatting = function(bufnr)
 end
 
 return {
-	"jose-elias-alvarez/null-ls.nvim",
-	opts = function()
-		local null_ls = require("null-ls")
-		return {
-			sources = {
-				null_ls.builtins.formatting.prettierd.with({
-					extra_filetypes = { "svelte", "vue", "astro" },
-				}),
-				null_ls.builtins.formatting.stylua,
-				-- null_ls.builtins.formatting.clang_format,
-				null_ls.builtins.formatting.rustfmt,
+	"jay-babu/mason-null-ls.nvim",
+	event = { "BufReadPre", "BufNewFile" },
+	dependencies = {
+		"williamboman/mason.nvim",
+		"jose-elias-alvarez/null-ls.nvim",
+	},
+	config = function()
+		require("mason").setup()
+		require("mason-null-ls").setup({
+			ensure_installed = {
+				"stylua",
+				"rustfmt",
 			},
+			automatic_installation = true,
+			handlers = {},
+		})
+		require("null-ls").setup({
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then
 					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
@@ -34,6 +39,6 @@ return {
 					})
 				end
 			end,
-		}
+		})
 	end,
 }

@@ -50,13 +50,6 @@ return {
 						capabilities = vim.deepcopy(capabilities),
 					})
 				end,
-				["tsserver"] = function()
-					require("typescript").setup({
-						server = {
-							capabilities = vim.deepcopy(capabilities),
-						},
-					})
-				end,
 				["eslint"] = function()
 					lspconfig.eslint.setup({
 						capabilities = vim.deepcopy(capabilities),

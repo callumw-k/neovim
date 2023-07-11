@@ -2,7 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	dependencies = {
 		"JoosepAlviste/nvim-ts-context-commentstring",
-		"callumw-k/nvim-ts-autotag",
+		"windwp/nvim-ts-autotag",
 		"nvim-treesitter/nvim-treesitter-context",
 	},
 	opts = {

@@ -10,7 +10,6 @@ return {
 			{ "williamboman/mason.nvim", config = true },
 			"williamboman/mason-lspconfig.nvim",
 			"simrat39/rust-tools.nvim",
-			"jose-elias-alvarez/typescript.nvim",
 		},
 		"neovim/nvim-lspconfig",
 		config = function()

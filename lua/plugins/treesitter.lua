@@ -8,6 +8,7 @@ return {
 	opts = {
 		highlight = {
 			enable = true,
+			additional_vim_regex_highlighting = { "markdown" },
 		},
 		context_commentstring = {
 			enable = true,
@@ -21,7 +22,7 @@ return {
 			extended_mode = true,
 			max_file_lines = nil,
 		},
-		ensure_installed = { "tsx", "typescript", "javascript", "python", "rust", "lua", "css", "regex" },
+		-- ensure_installed = { "tsx", "typescript", "javascript", "python", "rust", "lua", "css", "regex" },
 		auto_install = true,
 	},
 	config = function(_, opts)

@@ -1,0 +1,6 @@
+starship
+ripgrep
+fd
+zoxide
+lazygit
+zellij

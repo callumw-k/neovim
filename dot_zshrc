@@ -105,6 +105,8 @@ alias vim=nvim
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 

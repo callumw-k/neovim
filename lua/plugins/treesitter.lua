@@ -8,7 +8,6 @@ return {
 	opts = {
 		highlight = {
 			enable = true,
-			additional_vim_regex_highlighting = { "markdown" },
 		},
 		context_commentstring = {
 			enable = true,

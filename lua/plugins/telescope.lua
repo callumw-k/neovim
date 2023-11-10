@@ -23,6 +23,12 @@ return {
 						end,
 						"Search string",
 					},
+					r = {
+						function()
+							builtin.lsp_references()
+						end,
+						"Find references",
+					},
 					s = {
 						function()
 							builtin.current_buffer_fuzzy_find()

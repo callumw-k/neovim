@@ -95,6 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
+export $EDITOR=nvim
 #
 # Example aliases
 alias ezsh="vim ~/.zshrc"
@@ -105,9 +106,7 @@ alias vim=nvim
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-
-export DOTNET_ROOT=$HOME/.dotnet
+export DOTNET_ROOT=/usr/share/dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 
 export PATH="$PATH":"$HOME/.pub-cache/bin"
@@ -117,6 +116,7 @@ export todoist="~/Documents/apps/todoist.AppImage"
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$PATH":"$HOME/.local/bin"
 
 # pnpm
 export PNPM_HOME="/home/callum/.local/share/pnpm"
@@ -129,5 +129,5 @@ esac
 # bun completions
 [ -s "/home/callum/.bun/_bun" ] && source "/home/callum/.bun/_bun"
 # bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"

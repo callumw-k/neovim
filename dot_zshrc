@@ -98,7 +98,7 @@ source $ZSH/oh-my-zsh.sh
 export $EDITOR=nvim
 #
 # Example aliases
-alias ezsh="vim ~/.zshrc"
+alias ezsh="chezmoi edit ~/.zshrc"
 alias szsh="source ~/.zshrc"
 alias zellij='zellij --layout compact'
 # alias ohmyzsh="mate ~/.oh-my-zsh"

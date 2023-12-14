@@ -104,6 +104,7 @@ alias zellij='zellij'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=nvim
 alias sudoe="sudo -E nvim"
+alias cheze="chezmoi edit"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 

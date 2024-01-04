@@ -1,15 +1,11 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	dependencies = {
-		"JoosepAlviste/nvim-ts-context-commentstring",
-		"windwp/nvim-ts-autotag",
+		"callumw-k/nvim-ts-autotag",
 		"nvim-treesitter/nvim-treesitter-context",
 	},
 	opts = {
 		highlight = {
-			enable = true,
-		},
-		context_commentstring = {
 			enable = true,
 		},
 		autotag = {

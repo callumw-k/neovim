@@ -25,7 +25,6 @@ M.attach_buffer_keymaps = function()
 			vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
 
 			vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, opts)
-			vim.keymap.set("n", "gr", "<cmd>TroubleToggle lsp_references<cr>", opts)
 			vim.keymap.set("n", "<space>ff", function()
 				vim.lsp.buf.format({ async = true })
 			end, opts)

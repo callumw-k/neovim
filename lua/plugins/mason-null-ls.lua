@@ -18,15 +18,9 @@ return {
 	},
 	config = function()
 		require("mason").setup()
-		require("mason-null-ls").setup({
-			ensure_installed = {
-				"stylua",
-				"rustfmt",
-			},
-			automatic_installation = true,
-			handlers = {},
-		})
-		require("null-ls").setup({
+		local null_ls = require("null-ls")
+
+		null_ls.setup({
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then
 					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
@@ -39,6 +33,20 @@ return {
 					})
 				end
 			end,
+		})
+
+		require("mason-null-ls").setup({
+			ensure_installed = {},
+			automatic_installation = true,
+			handlers = {
+				eslint = function(source_name, methods)
+					null_ls.register(null_ls.builtins.diagnostics.eslint)
+					null_ls.register(null_ls.builtins.code_actions.eslint)
+				end,
+				stylua = function(source_name, methods)
+					null_ls.register(null_ls.builtins.formatting.stylua)
+				end,
+			},
 		})
 	end,
 }

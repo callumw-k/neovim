@@ -1,4 +1,4 @@
 return {
 	"nvim-lua/plenary.nvim",
-	 "folke/lsp-colors.nvim" ,
+	"folke/lsp-colors.nvim",
 }

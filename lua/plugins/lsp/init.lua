@@ -18,7 +18,6 @@ return {
 			local capabilities =
 				require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-			require("neodev").setup()
 			mason_lspconfig.setup()
 			mason_lspconfig.setup_handlers({
 				function(server)
@@ -47,17 +46,6 @@ return {
 					lspconfig.denols.setup({
 						root_dir = lspconfig.util.root_pattern("deno.json"),
 						capabilities = vim.deepcopy(capabilities),
-					})
-				end,
-				["eslint"] = function()
-					lspconfig.eslint.setup({
-						capabilities = vim.deepcopy(capabilities),
-						on_attach = function(_, bufnr)
-							vim.api.nvim_create_autocmd("BufWritePre", {
-								buffer = bufnr,
-								command = "EslintFixAll",
-							})
-						end,
 					})
 				end,
 			})

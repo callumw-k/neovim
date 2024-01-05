@@ -15,5 +15,6 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
+local lazy = require("lazy")
 
-return require("lazy").setup("plugins")
+return lazy.setup("plugins", { change_detection = { enabled = false } })

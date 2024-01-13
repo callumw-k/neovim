@@ -1,8 +1,10 @@
 local M = {}
 
+local group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true })
+
 M.attach_buffer_keymaps = function()
 	vim.api.nvim_create_autocmd("LspAttach", {
-		group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+		group = group,
 		callback = function(ev)
 			vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
@@ -37,6 +39,7 @@ end
 
 M.fix_omnisharp = function()
 	vim.api.nvim_create_autocmd("LspAttach", {
+		group = group,
 		callback = function(ev)
 			local client = vim.lsp.get_client_by_id(ev.data.client_id)
 			local function toSnakeCase(str)

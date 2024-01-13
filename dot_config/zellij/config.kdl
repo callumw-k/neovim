@@ -4,6 +4,10 @@ keybinds {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
         bind "Alt m" { SwitchToMode "Pane"; ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "Alt L"  {  SwitchToMode "Tab"; GoToNextTab; SwitchToMode "Normal"; }
+        bind "Alt H"  { SwitchToMode "Tab";  GoToPreviousTab; SwitchToMode "Normal"; }
+        unbind "Ctrl h"
+        unbind "Ctrl l"
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
@@ -39,7 +43,7 @@ keybinds {
         bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0;}
     }
     move {
-        bind "Ctrl u" { SwitchToMode "Normal"; }
+        bind "Ctrl s" { SwitchToMode "Normal"; }
         bind "n" "Tab" { MovePane; }
         bind "p" { MovePaneBackwards; }
         bind "h" "Left" { MovePane "Left"; }
@@ -177,7 +181,7 @@ keybinds {
         bind "Ctrl t" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
-        bind "Ctrl u" { SwitchToMode "Move"; }
+        bind "Ctrl s" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
         bind "Ctrl b" { SwitchToMode "Tmux"; }

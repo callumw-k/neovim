@@ -10,6 +10,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
+export HISTFILE=~/.zsh_history
+
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -96,15 +101,19 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 export $EDITOR=nvim
+
+
 #
 # Example aliases
 alias ezsh="chezmoi edit ~/.zshrc"
 alias szsh="chezmoi apply && source ~/.zshrc"
-alias zellij='zellij'
+alias zellij='zellij' 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=nvim
 alias sudoe="sudo -E nvim"
 alias cheze="chezmoi edit"
+alias cheza="chezmoi apply"
+alias chezc="chezmoi cd"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
@@ -114,6 +123,7 @@ export PATH="$PATH:/home/callum/.dotnet/tools"
 
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export ANDROID_HOME="/home/callum/.config/android-sdk"
+export QT_QPA_PLATFORM="wayland"
 
 
 export VOLTA_HOME="$HOME/.volta"
@@ -121,7 +131,12 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$PATH":"$HOME/.local/bin"
 
 # bun completions
-[ -s "/home/callum/.bun/_bun" ] && source "/home/callum/.bun/_bun"
+# [ -s "/home/callum/.bun/_bun" ] && source "/home/callum/.bun/_bun"
 # bun
 # export BUN_INSTALL="$HOME/.bun"
 # export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+

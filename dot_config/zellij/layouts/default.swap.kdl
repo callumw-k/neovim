@@ -50,7 +50,7 @@ swap_tiled_layout name="horizontal" {
 swap_tiled_layout name="stacked" {
     ui {
         pane split_direction="vertical" {
-       //     pane
+         //   pane { children; }
             pane stacked=true { children; }
         }
     }

@@ -12,11 +12,6 @@ return {
 			enable = true,
 		},
 		indent = { enable = true },
-		rainbow = {
-			enable = true,
-			extended_mode = true,
-			max_file_lines = nil,
-		},
 		-- ensure_installed = { "tsx", "typescript", "javascript", "python", "rust", "lua", "css", "regex" },
 		auto_install = true,
 	},

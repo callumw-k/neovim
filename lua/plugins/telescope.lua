@@ -11,6 +11,12 @@ return {
 
 			local mappings = {
 				f = {
+					m = {
+						function()
+							builtin.marks()
+						end,
+						"Search and jump to marks",
+					},
 					b = {
 						function()
 							builtin.buffers()

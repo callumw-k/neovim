@@ -1,3 +1,4 @@
+autoload -Uz compinit && compinit
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -108,12 +109,20 @@ export $EDITOR=nvim
 alias ezsh="chezmoi edit ~/.zshrc"
 alias szsh="chezmoi apply && source ~/.zshrc"
 alias zellij='zellij' 
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim=nvim
-alias sudoe="sudo -E nvim"
-alias cheze="chezmoi edit"
-alias cheza="chezmoi apply"
-alias chezc="chezmoi cd"
+alias vim="nvim"
+alias vi="nvim"
+alias sv="sudo -E nvim"
+alias svim="sudo -E nvim"
+alias snvim="sudo -E nvim"
+alias ce="chezmoi edit"
+alias ca="chezmoi apply"
+alias dbc="distrobox create --clone base-arch-container --name"
+alias dbeh="distrobox enter"
+
+function dbch(){
+    distrobox create --clone base-arch-container --name $1 --home /home/callum/distrobox-homes/$1 --init-hooks "chezmoi --init https://github.com/callumw-k/dotfiles && git clone https://github.com/callumw-k/neovim"
+}
+
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
@@ -130,13 +139,7 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$PATH":"$HOME/.local/bin"
 
-# bun completions
-# [ -s "/home/callum/.bun/_bun" ] && source "/home/callum/.bun/_bun"
-# bun
-# export BUN_INSTALL="$HOME/.bun"
-# export PATH="$BUN_INSTALL/bin:$PATH"
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-

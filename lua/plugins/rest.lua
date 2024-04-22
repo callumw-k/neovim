@@ -1,5 +1,6 @@
 return {
 	"rest-nvim/rest.nvim",
+	enabled = false,
 	dependancies = {
 		"nvim-lua/plenary.nvim",
 	},

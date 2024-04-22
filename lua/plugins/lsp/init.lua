@@ -30,7 +30,6 @@ return {
 						lsp_utils.attach_buffer_keymaps()
 						lsp_utils.fix_omnisharp()
 					end,
-
 					["rust_analyzer"] = function()
 						require("rust-tools").setup({
 							server = {

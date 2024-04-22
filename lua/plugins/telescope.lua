@@ -11,12 +11,6 @@ return {
 
 			local mappings = {
 				f = {
-					m = {
-						function()
-							builtin.marks()
-						end,
-						"Search and jump to marks",
-					},
 					b = {
 						function()
 							builtin.buffers()
@@ -28,6 +22,12 @@ return {
 							builtin.live_grep()
 						end,
 						"Search string",
+					},
+					m = {
+						function()
+							builtin.marks()
+						end,
+						"Find marks",
 					},
 					r = {
 						function()
@@ -65,6 +65,11 @@ return {
 							["<C-j>"] = actions.move_selection_next,
 							["<C-k>"] = actions.move_selection_previous,
 						},
+					},
+				},
+				pickers = {
+					marks = {
+						theme = "dropdown",
 					},
 				},
 			}

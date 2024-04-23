@@ -30,6 +30,11 @@ return {
 						lsp_utils.attach_buffer_keymaps()
 						lsp_utils.fix_omnisharp()
 					end,
+					["svelte"] = function()
+						lspconfig.svelte.setup({
+							capabilities = vim.deepcopy(capabilities),
+						})
+					end,
 					["rust_analyzer"] = function()
 						require("rust-tools").setup({
 							server = {
@@ -53,6 +58,7 @@ return {
 					end,
 				},
 			})
+			lspconfig.gleam.setup({})
 		end,
 	},
 }

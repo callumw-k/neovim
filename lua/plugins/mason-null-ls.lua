@@ -43,6 +43,10 @@ return {
 					null_ls.register(null_ls.builtins.diagnostics.eslint)
 					null_ls.register(null_ls.builtins.code_actions.eslint)
 				end,
+
+				prettierd = function(source_name, methods)
+					null_ls.register(null_ls.builtins.formatting.prettierd.with({ extra_filetypes = { "svelte" } }))
+				end,
 				stylua = function(source_name, methods)
 					null_ls.register(null_ls.builtins.formatting.stylua)
 				end,

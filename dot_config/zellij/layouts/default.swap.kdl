@@ -54,7 +54,9 @@ swap_tiled_layout name="horizontal" {
 
 
 swap_floating_layout name="staggered" {
-    floating_panes
+    floating_panes split_direction="vertical" {
+      children;
+  }
 }
 
 swap_floating_layout name="enlarged" {

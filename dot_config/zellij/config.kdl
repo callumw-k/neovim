@@ -6,6 +6,7 @@ keybinds {
         bind "Alt m" { SwitchToMode "Pane"; ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "Alt L"  {  SwitchToMode "Tab"; GoToNextTab; SwitchToMode "Normal"; }
         bind "Alt H"  { SwitchToMode "Tab";  GoToPreviousTab; SwitchToMode "Normal"; }
+        bind "Alt f" { SwitchToMode "Pane"; ToggleFloatingPanes; SwitchToMode "Normal"; }
         unbind "Ctrl h"
         unbind "Ctrl l"
     }

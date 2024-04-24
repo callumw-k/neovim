@@ -1,6 +1,14 @@
 tab_template name="ui" {
    children
-   pane size=1 borderless=true
+   pane size=1 borderless=true {
+       plugin location="zellij:compact-bar"
+  }
+}
+
+swap_tiled_layout name="stacked" {
+     ui {
+    pane stacked=true {children;}
+  }
 }
 
 swap_tiled_layout name="vertical" {
@@ -45,11 +53,6 @@ swap_tiled_layout name="horizontal" {
     }
 }
 
-swap_tiled_layout name="stacked" {
-     ui {
-    pane stacked=true {children;}
-  }
-}
 
 swap_floating_layout name="staggered" {
     floating_panes

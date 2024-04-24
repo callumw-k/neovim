@@ -46,7 +46,9 @@ swap_tiled_layout name="horizontal" {
 }
 
 swap_tiled_layout name="stacked" {
-     ui stacked=true children;
+     ui {
+    pane stacked=true {children;}
+  }
 }
 
 swap_floating_layout name="staggered" {

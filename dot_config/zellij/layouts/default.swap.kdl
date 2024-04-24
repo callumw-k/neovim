@@ -1,6 +1,6 @@
 tab_template name="ui" {
    children
-   pane size=1 borderless=false 
+   pane size=1 borderless=true
 }
 
 swap_tiled_layout name="vertical" {
@@ -46,7 +46,7 @@ swap_tiled_layout name="horizontal" {
 }
 
 swap_tiled_layout name="stacked" {
-     ui stacked=true 
+     ui stacked=true children;
 }
 
 swap_floating_layout name="staggered" {

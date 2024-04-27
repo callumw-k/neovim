@@ -13,6 +13,8 @@ end
 config.font = wezterm.font("JetBrains Mono Nerd Font Mono", { weight = "Regular" })
 config.font_size = 13
 
+config.default_prog = { "zellij" }
+
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:

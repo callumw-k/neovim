@@ -1,13 +1,15 @@
 tab_template name="ui" {
-   children 
-   pane size=1 borderless=true {
+  children 
+  pane size=1 borderless=true {
        plugin location="zellij:compact-bar"
   }
 }
 
 swap_tiled_layout name="stacked" {
     ui {
-      pane stacked=true { children; }
+      pane {
+        pane stacked=true { children; }
+      }
     }
 }
 swap_tiled_layout name="vertical" {
@@ -57,19 +59,19 @@ swap_floating_layout name="spread" {
         pane {y "25%"; x "25%"; }
     }
     floating_panes max_panes=2 {
-        pane { x "1%"; y "25%"; width "45%"; }
-        pane { x "50%"; y "25%"; width "45%"; }
+        pane { x "1%"; y "25%"; width "48%"; }
+        pane { x "50%"; y "25%"; width "48%"; }
     }
     floating_panes max_panes=3 {
-        pane focus=true { y "55%"; width "45%"; height "45%"; }
-        pane { x "1%"; y "1%"; width "45%"; }
-        pane { x "50%"; y "1%"; width "45%"; }
+        pane { y "55%"; width "50%"; height "48%"; }
+        pane { x "1%"; y "1%"; width "48%"; }
+        pane { x "50%"; y "1%"; width "48%"; }
     }
     floating_panes max_panes=4 {
-       pane { x "1%"; y "55%"; width "45%"; height "45%"; }
-       pane focus=true { x "50%"; y "55%"; width "45%"; height "45%"; }
-       pane { x "1%"; y "1%"; width "45%"; height "45%"; }
-       pane { x "50%"; y "1%"; width "45%"; height "45%"; }
+       pane { x "1%"; y "55%"; width "48%"; height "48%"; }
+       pane { x "50%"; y "55%"; width "48%"; height "48%"; }
+       pane { x "1%"; y "1%"; width "48%"; height "48%"; }
+       pane { x "50%"; y "1%"; width "48%"; height "48%"; }
    }
 }
 

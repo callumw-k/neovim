@@ -7,6 +7,8 @@ keybinds {
         bind "Alt L"  {  SwitchToMode "Tab"; GoToNextTab; SwitchToMode "Normal"; }
         bind "Alt H"  { SwitchToMode "Tab";  GoToPreviousTab; SwitchToMode "Normal"; }
         bind "Alt f" { SwitchToMode "Pane"; ToggleFloatingPanes; SwitchToMode "Normal"; }
+        bind "Alt q" { SwitchToMode "Pane"; CloseFocus; SwitchToMode "Normal"; }
+        bind "Alt t" { SwitchToMode "Tab"; NewTab; SwitchToMode "Normal"; }
         unbind "Ctrl h"
         unbind "Ctrl l"
     }
@@ -226,7 +228,7 @@ plugins {
 //   - true (default)
 //   - false
 //
-// pane_frames true
+pane_frames true
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:

@@ -146,3 +146,9 @@ eval "$(pyenv init -)"
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/callum/.dart-cli-completion/zsh-config.zsh ]] && . /home/callum/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+

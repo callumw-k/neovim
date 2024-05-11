@@ -120,9 +120,8 @@ alias ca="chezmoi apply"
 alias dbc="distrobox create --clone base-arch-container --name"
 alias dbeh="distrobox enter"
 alias pnpx="pnpm dlx"
-# export PATH="$PATH:$HOME/fvm/default/bin"
-# export PATH="$PATH:$HOME/fvm/default/bin/dart"
-export PATH="$PATH:/usr/bin/flutter/bin:$PATH"
+export PATH="$PATH:$HOME/fvm/default/bin"
+export PATH="$PATH:$HOME/fvm/default/bin/dart"
 
 export EDITOR='nvim'
 

@@ -122,7 +122,7 @@ alias dbeh="distrobox enter"
 alias pnpx="pnpm dlx"
 # export PATH="$PATH:$HOME/fvm/default/bin"
 # export PATH="$PATH:$HOME/fvm/default/bin/dart"
-export PATH="$HOME/.config/flutter-sdk/bin:$PATH"
+export PATH="$PATH:$HOME/.config/flutter-sdk/bin"
 
 export EDITOR='nvim'
 

@@ -133,7 +133,7 @@ function dbch(){
     distrobox create --clone base-arch-container --name $1 --home /home/callum/distrobox-homes/$1 --init-hooks "chezmoi --init https://github.com/callumw-k/dotfiles && git clone https://github.com/callumw-k/neovim"
 }
 
-function dbpush() {
+function dcpush() {
   docker build -t $1:latest . && docker tag $1 callumw-k/$1:latest && docker push callumw-k/$1
 }
 

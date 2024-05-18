@@ -134,7 +134,7 @@ function dbch(){
 }
 
 function dcpush() {
-  docker build -t $1 . && docker tag $1 callumw-k/$1 && docker push callumw-k/$1
+  docker build -t $1 . && docker tag $1 callumw-k/$1 && docker push callumw-k/$1:latest
 }
 
 export DOTNET_ROOT=/usr/share/dotnet

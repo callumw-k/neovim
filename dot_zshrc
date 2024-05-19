@@ -139,7 +139,7 @@ function dcpush() {
 
 export DOTNET_ROOT="/usr/share/dotnet"
 export PATH=$PATH:$DOTNET_ROOT
-export PATH="$PATH:/home/callum/.dotnet/tools"
+# export PATH="$PATH:/home/callum/.dotnet/tools"
 
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export ANDROID_HOME="/home/callum/.config/android-sdk"

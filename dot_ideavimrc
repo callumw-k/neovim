@@ -19,11 +19,22 @@ map Q gq
 "" Map \r to the Reformat Code action
 "map \r <Action>(ReformatCode)
 nnoremap <leader>fp :action GotoFile<CR>
-nnoremap <leader>fs :action Find<CR>
+nnoremap <leader>fs :action FindInPath<CR>
+nnoremap <leader>rn :action RenameElement<CR>
+nnoremap <leader>w :action SaveAll<CR>
+nnoremap <leader>fb :action RecentFiles<CR>
 nnoremap <S-L> :action NextTab<CR>
 nnoremap <S-H> :action PreviousTab<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+vnoremap p "_dP"
+nnoremap <leader>bd :bd!<cr>
+nnoremap <leader>bD :%bd<cr>
+nnoremap <leader>ca :action ShowIntentionActions<cr>
 
-"" Map <leader>d to start debug
+"" vnoremap <leader>d to start debug
 "map <leader>d <Action>(Debug)
 
 "" Map \b to toggle the breakpoint on the current line

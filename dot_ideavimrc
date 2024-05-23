@@ -4,6 +4,8 @@
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
+set sneak
+set quickscope
 set scrolloff=5
 let mapleader = ' '
 
@@ -22,7 +24,7 @@ nnoremap <leader>fp :action GotoFile<CR>
 nnoremap <leader>fs :action FindInPath<CR>
 nnoremap <leader>rn :action RenameElement<CR>
 nnoremap <leader>w :action SaveAll<CR>
-nnoremap <leader>fb :action RecentFiles<CR>
+nnoremap <leader>fb :action RecentChangedFiles<CR>
 nnoremap <S-L> :action NextTab<CR>
 nnoremap <S-H> :action PreviousTab<CR>
 nnoremap <C-h> <C-w>h
@@ -33,6 +35,7 @@ vnoremap p "_dP"
 nnoremap <leader>bd :bd!<cr>
 nnoremap <leader>bD :%bd<cr>
 nnoremap <leader>ca :action ShowIntentionActions<cr>
+nnoremap <leader>s :action GotoSymbol<cr>
 
 "" vnoremap <leader>d to start debug
 "map <leader>d <Action>(Debug)

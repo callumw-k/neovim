@@ -33,7 +33,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 vnoremap p "_dP"
 nnoremap <leader>bd :bd!<cr>
-nnoremap <leader>bD :%bd<cr>
+nnoremap <leader>bD :action CloseAllEditors<cr>
 nnoremap <leader>ca :action ShowIntentionActions<cr>
 nnoremap <leader>s :action GotoSymbol<cr>
 

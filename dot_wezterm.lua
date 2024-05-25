@@ -18,7 +18,7 @@ config.default_prog = { "zellij" }
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "Catppuccin Frappe"
+config.color_scheme = "Catppuccin Macchiato"
 
 -- and finally, return the configuration to wezterm
 return config

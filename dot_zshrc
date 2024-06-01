@@ -123,7 +123,7 @@ alias pnpx="pnpm dlx"
 alias fvf="fvm flutter"
 alias dvm="fvm dart"
 alias update-vms="sv /etc/libvirt/hooks/qemu"
-alias "/usr/share/dotnet/dotnet ef"="dotnet ef"
+alias "dotnet ef"="/usr/share/dotnet/dotnet ef"
 export PATH="$PATH:$HOME/fvm/default/bin"
 # export PATH="$PATH:$HOME/fvm/default/bin/dart"
 # export PATH="$PATH:$HOME/.config/flutter-sdk/bin"
@@ -152,6 +152,9 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$PATH":"$HOME/.local/bin"
 
+
+[[ -f /home/callum/.dart-cli-completion/zsh-config.zsh ]] && . /home/callum/.dart-cli-completion/zsh-config.zsh || true
+
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -161,6 +164,5 @@ eval "$(zoxide init zsh)"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
-[[ -f /home/callum/.dart-cli-completion/zsh-config.zsh ]] && . /home/callum/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 

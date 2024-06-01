@@ -130,6 +130,9 @@ export PATH="$PATH:$HOME/.config/flutter-sdk/bin"
 
 export EDITOR='nvim'
 
+
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+export ANDROID_HOME="/home/callum/.config/android-sdk"
 function dbch(){
     distrobox create --clone base-arch-container --name $1 --home /home/callum/distrobox-homes/$1 --init-hooks "chezmoi --init https://github.com/callumw-k/dotfiles && git clone https://github.com/callumw-k/neovim"
 }
@@ -143,8 +146,6 @@ export PATH=$PATH:$DOTNET_ROOT
 export PATH="$PATH:/home/callum/.dotnet/tools"
 # export PATH="$PATH:$HOME/.dotnet/tools/"
 
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-export ANDROID_HOME="/home/callum/.config/android-sdk"
 # export QT_QPA_PLATFORM="wayland"
 
 export VOLTA_HOME="$HOME/.volta"

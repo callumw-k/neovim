@@ -124,9 +124,9 @@ alias fvf="fvm flutter"
 alias dvm="fvm dart"
 alias update-vms="sv /etc/libvirt/hooks/qemu"
 alias "/usr/share/dotnet/dotnet ef"="dotnet ef"
-export PATH="$PATH:$HOME/fvm/default/bin"
-export PATH="$PATH:$HOME/fvm/default/bin/dart"
-# export PATH="$PATH:$HOME/.config/flutter-sdk/bin"
+# export PATH="$PATH:$HOME/fvm/default/bin"
+# export PATH="$PATH:$HOME/fvm/default/bin/dart"
+export PATH="$PATH:$HOME/.config/flutter-sdk/bin"
 
 export EDITOR='nvim'
 
@@ -140,8 +140,8 @@ function dcpush() {
 
 export DOTNET_ROOT="/usr/share/dotnet"
 export PATH=$PATH:$DOTNET_ROOT
-# export PATH="$PATH:/home/callum/.dotnet/tools"
-export PATH="$PATH:$HOME/.dotnet/tools/"
+export PATH="$PATH:/home/callum/.dotnet/tools"
+# export PATH="$PATH:$HOME/.dotnet/tools/"
 
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export ANDROID_HOME="/home/callum/.config/android-sdk"

@@ -125,6 +125,8 @@ alias dvm="fvm dart"
 alias update-vms="sv /etc/libvirt/hooks/qemu"
 export ANDROID_HOME="$HOME/.config/android-sdk"
 alias "dotnet ef"="/usr/share/dotnet/dotnet ef"
+alias ga="git add ."
+alias gm="git commit -m"
 
 # export PATH="$PATH:$HOME/fvm/default/bin"
 # export PATH="$PATH:$HOME/fvm/default/bin/dart"

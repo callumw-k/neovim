@@ -169,3 +169,6 @@ eval "$(zoxide init zsh)"
 ## Completion scripts setup. Remove the following line to uninstall
 ## [/Completion]
 
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform

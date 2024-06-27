@@ -127,6 +127,7 @@ export ANDROID_HOME="$HOME/.config/android-sdk"
 alias "dotnet ef"="/usr/share/dotnet/dotnet ef"
 alias ga="git add ."
 alias gm="git commit -m"
+alias gc="git checkout"
 
 # export PATH="$PATH:$HOME/fvm/default/bin"
 # export PATH="$PATH:$HOME/fvm/default/bin/dart"

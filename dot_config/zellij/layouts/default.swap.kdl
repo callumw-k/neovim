@@ -26,7 +26,6 @@ swap_tiled_layout name="vertical ratio" {
         }
     }
 
-    ui max_panes {
         pane split_direction="vertical" {
             pane size="70%"
             pane split_direction="horizontal" {
@@ -35,7 +34,6 @@ swap_tiled_layout name="vertical ratio" {
               }
             }
         }
-    }
 }
 
 swap_tiled_layout name="vertical" {

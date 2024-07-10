@@ -26,7 +26,7 @@ swap_tiled_layout name="vertical ratio" {
         }
     }
 
-tab split_direction="vertical" {
+  ui split_direction="vertical" {
             pane size="70%"
             pane split_direction="horizontal" {
               pane {

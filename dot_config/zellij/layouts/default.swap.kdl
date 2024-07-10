@@ -17,9 +17,14 @@ swap_tiled_layout name="stacked" {
 swap_tiled_layout name="vertical ratio" {
     ui {
         pane split_direction="vertical" {
-            pane size="80%"
+            pane size="70%"
             pane split_direction="horizontal" {
-                pane {children;}
+                pane {
+                  command "zellij"
+                }
+                pane {
+                  command "npm run dev"
+                }
             }
         }
     }

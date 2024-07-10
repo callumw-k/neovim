@@ -25,7 +25,8 @@ map Q gq
 nnoremap <leader>fp :action GotoFile<CR>
 nnoremap <leader>fs :action FindInPath<CR>
 nnoremap <leader>rn :action RenameElement<CR>
-nnoremap <leader>w :action SaveAll<CR>
+" nnoremap <leader>w :action SaveAll<CR>
+nnoremap <leader>w :w<CR>
 nnoremap <leader>fb :action RecentChangedFiles<CR>
 nnoremap <S-L> :action NextTab<CR>
 nnoremap <S-H> :action PreviousTab<CR>

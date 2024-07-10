@@ -19,12 +19,7 @@ swap_tiled_layout name="vertical ratio" {
         pane split_direction="vertical" {
             pane size="70%"
             pane split_direction="horizontal" {
-                pane {
-                  command "lazygit"
-                }
-                pane {
-                  command "npm run dev"
-                }
+                {children;}
             }
         }
     }

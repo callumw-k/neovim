@@ -15,11 +15,24 @@ swap_tiled_layout name="stacked" {
 
 
 swap_tiled_layout name="vertical ratio" {
-    ui {
+    ui max_panes 4{
         pane split_direction="vertical" {
             pane size="70%"
             pane split_direction="horizontal" {
-                {children;}
+              pane {
+                children;
+              }
+            }
+        }
+    }
+
+    ui max_panes 4{
+        pane split_direction="vertical" {
+            pane size="70%"
+            pane split_direction="horizontal" {
+              pane {
+                pane stacked=true {children;}
+              }
             }
         }
     }

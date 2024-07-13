@@ -10,7 +10,7 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.font = wezterm.font("JetBrains Mono Nerd Font Mono", { weight = "Regular" })
+config.font = wezterm.font("Monaspace Xenon", { weight = "Regular" })
 config.font_size = 13
 
 config.default_prog = { "zellij" }

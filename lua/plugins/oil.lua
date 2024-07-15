@@ -21,6 +21,11 @@ return {
 			view_options = {
 				show_hidden = true,
 			},
+
+			float = {
+				padding = 20,
+			},
+
 			keymaps = {
 				["g?"] = "actions.show_help",
 				["<CR>"] = "actions.select",

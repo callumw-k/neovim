@@ -23,6 +23,9 @@ return {
 				name = "Git",
 				s = { "<cmd>Neogit<CR>", "Status" },
 			},
+			s = {
+				v = { ":vsplit new<cr>", "Split empty to the right" },
+			},
 		}
 		which_key.setup(lsp_opts)
 		which_key.register(mappings, require("defaults.utils").which_key_opts)

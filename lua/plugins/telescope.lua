@@ -35,6 +35,8 @@ return {
 						end,
 						"Find references",
 					},
+				},
+				b = {
 					s = {
 						function()
 							builtin.current_buffer_fuzzy_find()

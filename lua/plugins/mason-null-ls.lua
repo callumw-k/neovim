@@ -2,6 +2,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local lsp_formatting = function(bufnr)
 	vim.lsp.buf.format({
+		async = false,
 		bufnr = bufnr,
 		filter = function(client)
 			return client.name == "null-ls"
@@ -45,7 +46,9 @@ return {
 				end,
 
 				prettierd = function(source_name, methods)
-					null_ls.register(null_ls.builtins.formatting.prettierd.with({ extra_filetypes = { "svelte" } }))
+					null_ls.register(
+						null_ls.builtins.formatting.prettierd.with({ extra_filetypes = { "svelte", "astro" } })
+					)
 				end,
 				stylua = function(source_name, methods)
 					null_ls.register(null_ls.builtins.formatting.stylua)

@@ -10,8 +10,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.font = wezterm.font("Monaspace Xenon", { weight = "Regular" })
-config.font_size = 13
+config.font = wezterm.font("Monaspace Neon", { weight = "Regular" })
+config.font_size = 12
+config.line_height = 1.1
 
 config.default_prog = { "zellij" }
 

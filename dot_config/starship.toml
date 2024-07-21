@@ -170,8 +170,8 @@ format = '\[[as $symbol]($style)\]'
 format = '\[[$symbol($version)]($style)\]'
 
 [terraform]
-disabled = true
 format = '\[[$symbol$workspace]($style)\]'
+disabled = true
 
 [time]
 format = '\[[$time]($style)\]'

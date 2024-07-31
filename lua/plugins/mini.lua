@@ -17,7 +17,8 @@ return {
 			require("defaults.utils").which_key_register(mappings)
 			require("mini.files").setup({
 				mappings = {
-					synchronize = ":w",
+					synchronize = "<space>w",
+					go_in_plus = "<cr>",
 				},
 				windows = {
 					width_preview = 100,

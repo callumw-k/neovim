@@ -4,6 +4,7 @@ return {
 		"folke/which-key.nvim",
 		"nvim-tree/nvim-web-devicons",
 	},
+	enabled = false,
 
 	config = function()
 		local mappings = {

@@ -24,7 +24,8 @@ return {
 				s = { "<cmd>Neogit<CR>", "Status" },
 			},
 			s = {
-				v = { ":vsplit new<cr>", "Split empty to the right" },
+				v = { ":vsplit<cr>", "Split to the right" },
+				w = { ":split<cr>", "Split horizontal" },
 			},
 		}
 		which_key.setup(lsp_opts)

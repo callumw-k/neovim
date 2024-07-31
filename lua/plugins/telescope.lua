@@ -35,6 +35,12 @@ return {
 						end,
 						"Find references",
 					},
+					s = {
+						function()
+							builtin.lsp_document_symbols()
+						end,
+						"Search the current LSP symbols",
+					},
 				},
 				b = {
 					s = {

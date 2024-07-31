@@ -30,9 +30,9 @@ M.attach_buffer_keymaps = function()
 			vim.keymap.set("n", "<space>ff", function()
 				vim.lsp.buf.format({ async = true })
 			end, opts)
-			vim.keymap.set("n", "<space>s", function()
-				require("telescope.builtin").lsp_document_symbols({})
-			end, opts)
+			-- vim.keymap.set("n", "<space>s", function()
+			-- 	require("telescope.builtin").lsp_document_symbols({})
+			-- end, opts)
 		end,
 	})
 end

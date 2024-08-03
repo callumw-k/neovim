@@ -129,6 +129,8 @@ alias "dotnet ef"="/usr/share/dotnet/dotnet ef"
 alias ga="git add ."
 alias gm="git commit -m"
 alias gc="git checkout"
+alias spu="sudo pacman -Syu"
+alias sp="sudo pacman -S"
 
 # export PATH="$PATH:$HOME/fvm/default/bin"
 # export PATH="$PATH:$HOME/fvm/default/bin/dart"

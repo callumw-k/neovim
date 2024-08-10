@@ -6,8 +6,8 @@
 " text scroll if you mouse-click near the start or end of the window.
 
 set relativenumber
-set sneak
-set quickscope
+" set sneak
+" set quickscope
 set scrolloff=5
 let mapleader = ' '
 

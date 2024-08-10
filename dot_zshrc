@@ -133,6 +133,7 @@ alias spu="sudo pacman -Syu"
 alias sp="sudo pacman -S"
 alias lvup="./vendor/bin/sail up"
 alias lvdown="./vendor/bin/sail down"
+alias pat="php artisan"
 
 # export PATH="$PATH:$HOME/fvm/default/bin"
 # export PATH="$PATH:$HOME/fvm/default/bin/dart"

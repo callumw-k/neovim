@@ -162,6 +162,8 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$PATH":"$HOME/.local/bin"
 
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+
 
 [[ -f /home/callum/.dart-cli-completion/zsh-config.zsh ]] && . /home/callum/.dart-cli-completion/zsh-config.zsh || true
 

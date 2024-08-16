@@ -19,6 +19,9 @@ return {
 				mappings = {
 					synchronize = "<space>w",
 					go_in_plus = "<cr>",
+					go_out = "-",
+					go_in = "L",
+					go_out_plus = "H",
 				},
 				windows = {
 					width_preview = 100,

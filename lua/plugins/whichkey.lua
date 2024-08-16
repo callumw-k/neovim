@@ -31,6 +31,15 @@ return {
 		which_key.setup(lsp_opts)
 		which_key.register(mappings, require("defaults.utils").which_key_opts)
 	end,
+	keys = {
+		{
+			"<leader>?",
+			function()
+				require("which-key").show({ global = false })
+			end,
+			desc = "Buffer Local Keymaps (which-key)",
+		},
+	},
 	opts = {
 		window = {
 			border = "single", -- none, single, double, shadow

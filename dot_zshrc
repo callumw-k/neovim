@@ -105,7 +105,6 @@ source $ZSH/oh-my-zsh.sh
 export $EDITOR=nvim
 
 
-#
 # Example aliases
 alias ezsh="chezmoi edit ~/.zshrc"
 alias szsh="chezmoi apply && source ~/.zshrc"

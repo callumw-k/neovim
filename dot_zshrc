@@ -106,9 +106,7 @@ export $EDITOR=nvim
 
 
 # Example aliases
-alias ezsh="chezmoi edit ~/.zshrc"
-alias szsh="chezmoi apply && source ~/.zshrc"
-alias zellij='zellij' 
+alias ezsh="chezmoi edit --apply ~/.zshrc && source ~/.zshrc"
 alias vim="nvim"
 alias vi="nvim"
 alias sv="sudo -E nvim"
@@ -119,12 +117,11 @@ alias cadd="chezmoi add"
 alias ca="chezmoi apply"
 alias dbc="distrobox create --clone base-arch-container --name"
 alias db="distrobox"
-alias dbeh="distrobox enter"
+alias dbe="distrobox enter"
 alias pnpx="pnpm dlx"
 alias fvf="fvm flutter"
 alias dvm="fvm dart"
 alias update-vms="sv /etc/libvirt/hooks/qemu"
-export ANDROID_HOME="$HOME/.config/android-sdk"
 alias "dotnet ef"="/usr/share/dotnet/dotnet ef"
 alias ga="git add ."
 alias gm="git commit -m"
@@ -136,6 +133,9 @@ alias lvdown="./vendor/bin/sail down"
 alias pat="php artisan"
 alias sail="./vendor/bin/sail"
 alias vpat="./vendor/bin/sail artisan"
+
+
+export ANDROID_HOME="$HOME/.config/android-sdk"
 
 # export PATH="$PATH:$HOME/fvm/default/bin"
 # export PATH="$PATH:$HOME/fvm/default/bin/dart"

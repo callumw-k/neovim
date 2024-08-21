@@ -133,6 +133,7 @@ alias lvdown="./vendor/bin/sail down"
 alias pat="php artisan"
 alias sail="./vendor/bin/sail"
 alias saila="./vendor/bin/sail artisan"
+PHPSTORM_JDK="/usr/lib/jvm/default"
 
 
 export ANDROID_HOME="$HOME/.config/android-sdk"

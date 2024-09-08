@@ -107,6 +107,7 @@ export $EDITOR=nvim
 
 # Example aliases
 alias ezsh="chezmoi edit --apply ~/.zshrc && source ~/.zshrc"
+alias szsh="source ~/.zshrc"
 alias vim="nvim"
 alias vi="nvim"
 alias sv="sudo -E nvim"

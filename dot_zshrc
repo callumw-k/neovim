@@ -140,7 +140,8 @@ export ANDROID_HOME="$HOME/.config/android-sdk"
 
 # export PATH="$PATH:$HOME/fvm/default/bin"
 # export PATH="$PATH:$HOME/fvm/default/bin/dart"
-export PATH="$PATH:$HOME/.config/flutter-sdk/bin"
+# export PATH="$PATH:$HOME/.config/flutter-sdk/bin"
+export PATH="$PATH":"/home/callum/fvm/default/bin"
 
 export EDITOR='nvim'
 

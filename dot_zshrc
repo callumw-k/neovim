@@ -139,6 +139,7 @@ PHPSTORM_JDK="/usr/lib/jvm/default"
 
 export ANDROID_HOME="$HOME/.config/android-sdk"
 export NDK_HOME="$HOME/.config/android-sdk/ndk/28.0.12433566"
+export JAVA_HOME="/opt/android-studio/jbr"
 
 # export PATH="$PATH:$HOME/fvm/default/bin"
 # export PATH="$PATH:$HOME/fvm/default/bin/dart"

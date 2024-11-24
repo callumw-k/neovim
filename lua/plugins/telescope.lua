@@ -12,7 +12,6 @@ return {
 		keys = function()
 			local builtin = require("telescope.builtin")
 			return {
-				-- { "<leader>pv", ":Telescope file_browser<CR>" },
 				{
 					"<leader>fp",
 					function()

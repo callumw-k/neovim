@@ -1,4 +1,10 @@
-local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+local eslint_d_filetypes = {
+	"javascript",
+	"typescript",
+	"javascriptreact",
+	"typescriptreact",
+	"svelte",
+}
 
 return {
 	{
@@ -6,22 +12,26 @@ return {
 		event = {
 			"BufReadPre",
 			"BufNewFile",
-			"InsertLeave",
 		},
 		config = function()
 			local lint = require("lint")
-
+			local helpers = require("config.helpers")
 			lint.linters_by_ft = {
-				javascript = { "eslint_d" },
-				typescript = { "eslint_d" },
-				javascriptreact = { "eslint_d" },
-				typescriptreact = { "eslint_d" },
-				svelte = { "eslint_d" },
 				python = { "pylint" },
 			}
 
-			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
-				group = lint_augroup,
+			local has_package_json = helpers.if_file_exist("package.json")
+			local has_eslint = has_package_json and helpers.if_file_exist("eslint*")
+
+			if has_eslint then
+				for _, ft in ipairs(eslint_d_filetypes) do
+					lint.linters_by_ft[ft] = { "eslint" }
+				end
+			end
+
+			local lint_group = vim.api.nvim_create_augroup("lint", { clear = true })
+			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePre", "InsertLeave" }, {
+				group = lint_group,
 				callback = function()
 					lint.try_lint()
 				end,

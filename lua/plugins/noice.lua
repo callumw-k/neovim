@@ -1,6 +1,7 @@
 return {
 	{
 		"rcarriga/nvim-notify",
+		enabled = false,
 		opts = {
 			render = "wrapped-compact",
 			max_width = 50,

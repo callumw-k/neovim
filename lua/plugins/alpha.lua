@@ -1,4 +1,5 @@
 return {
+	enabled = false,
 	"goolord/alpha-nvim",
 	dependencies = { "echasnovski/mini.icons" },
 	config = function()

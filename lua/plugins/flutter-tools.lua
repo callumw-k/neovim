@@ -11,6 +11,23 @@ return {
 			"nvim-lua/plenary.nvim",
 			"stevearc/dressing.nvim",
 		},
+		config = function(_, opts)
+			require("flutter-tools").setup(opts)
+			require("telescope").load_extension("flutter")
+		end,
+		keys = function()
+			local builtin = require("telescope").extensions
+
+			return {
+				{
+					"<leader>ff",
+					function()
+						builtin.flutter.commands()
+					end,
+					"Flutter dev tools",
+				},
+			}
+		end,
 		opts = {
 			fvm = true,
 			dev_tools = {

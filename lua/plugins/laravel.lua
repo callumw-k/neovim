@@ -5,6 +5,7 @@ return {
 		"nvim-telescope/telescope.nvim",
 		"MunifTanjim/nui.nvim",
 		"kevinhwang91/promise-async",
+		"nvim-treesitter/nvim-treesitter",
 	},
 	cmd = { "Laravel" },
 	keys = {

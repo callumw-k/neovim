@@ -26,6 +26,11 @@ return {
 					end,
 					"Flutter dev tools",
 				},
+				{
+					"<leader>fi",
+					"<cmd>FlutterLogToggle<cr>",
+					"Flutter dev tools",
+				},
 			}
 		end,
 		opts = {

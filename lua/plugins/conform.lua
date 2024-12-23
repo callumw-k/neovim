@@ -1,4 +1,4 @@
-local prettier_formatting = { "prettierd", "prettier", stop_after_first = true }
+local prettier_formatting = { "prettierd", "prettier", stop_after_first = true, lsp_format = "fallback" }
 
 local prettier_filetypes = {
 	"javascript",
@@ -15,8 +15,8 @@ local prettier_filetypes = {
 }
 
 local formatters_by_ft = {
-	lua = { "stylua" },
-	python = { "isort", "black" },
+	lua = { "stylua", lsp_format = "fallback" },
+	python = { "isort", "black", lsp_format = "fallback" },
 }
 
 for _, filetype in ipairs(prettier_filetypes) do

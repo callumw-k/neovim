@@ -1,5 +1,6 @@
 return {
 	"stevearc/oil.nvim",
+	enabled = false,
 	event = "InsertEnter",
 	---@module 'oil'
 	---@type oil.SetupOpts

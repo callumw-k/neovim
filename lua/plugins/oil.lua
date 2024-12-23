@@ -1,10 +1,10 @@
 return {
 	"stevearc/oil.nvim",
-	enabled = false,
 	event = "InsertEnter",
 	---@module 'oil'
 	---@type oil.SetupOpts
 	opts = {
+		default_file_explorer = false,
 		use_default_keymaps = false,
 		keymaps = {
 			["g?"] = "actions.show_help",
@@ -39,7 +39,7 @@ return {
 	},
 	keys = {
 		{
-			"<leader>pv",
+			"<leader>po",
 			function()
 				require("oil").open()
 			end,

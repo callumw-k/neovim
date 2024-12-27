@@ -24,6 +24,7 @@ return {
 	---@type YaziConfig
 	opts = {
 		-- if you want to open yazi instead of netrw, see below for more info
+		floating_window_scaling_factor = 0.95,
 		open_for_directories = true,
 		keymaps = {
 			show_help = "<f1>",

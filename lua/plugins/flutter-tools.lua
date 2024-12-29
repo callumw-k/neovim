@@ -20,7 +20,7 @@ return {
 
 			return {
 				{
-					"<leader>ff",
+					"<leader>ft",
 					function()
 						builtin.flutter.commands()
 					end,

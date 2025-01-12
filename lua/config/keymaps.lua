@@ -9,6 +9,8 @@ keymap("n", "<leader>q", ":q!<CR>", opts)
 keymap("n", "<leader>w", ":silent update!<CR>", opts)
 keymap("n", "<leader>sv", ":vsplit<cr>", opts)
 keymap("n", "<leader>sw", ":split<cr>", opts)
+keymap("n", "<leader>bd", ":bd!<cr>", opts)
+keymap("n", "<leader>bD", ":%bd<cr>", opts)
 
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)

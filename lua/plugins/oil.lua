@@ -1,50 +1,49 @@
 return {
 	"stevearc/oil.nvim",
-	dependencies = {
-		"folke/which-key.nvim",
-		"nvim-tree/nvim-web-devicons",
+	event = "InsertEnter",
+	---@module 'oil'
+	---@type oil.SetupOpts
+	opts = {
+		default_file_explorer = false,
+		use_default_keymaps = false,
+		keymaps = {
+			["g?"] = "actions.show_help",
+			["<CR>"] = "actions.select",
+			["<C-v>"] = {
+				"actions.select",
+				opts = { vertical = true, close = true },
+				desc = "Open the entry in a vertical split",
+			},
+			["<C-h>"] = {
+				"actions.select",
+				opts = { horizontal = true, close = true },
+				desc = "Open the entry in a horizontal split",
+			},
+			["<leader>p"] = {
+				"actions.select",
+				opts = { tab = true, close = true },
+				desc = "Open the entry in new tab",
+			},
+			["<C-p>"] = "actions.preview",
+			["<C-c>"] = "actions.close",
+			["<C-l>"] = "actions.refresh",
+			["-"] = "actions.parent",
+			["_"] = "actions.open_cwd",
+			["`"] = "actions.cd",
+			["~"] = { "actions.cd", opts = { scope = "tab" }, desc = ":tcd to the current oil directory", mode = "n" },
+			["gs"] = "actions.change_sort",
+			["gx"] = "actions.open_external",
+			["g."] = "actions.toggle_hidden",
+			["g\\"] = "actions.toggle_trash",
+		},
 	},
-	enabled = false,
-
-	config = function()
-		local mappings = {
-			p = {
-				v = {
-					function()
-						require("oil").open()
-					end,
-					"Open file explorer",
-				},
-			},
-		}
-		require("defaults.utils").which_key_register(mappings)
-		require("oil").setup({
-			view_options = {
-				show_hidden = true,
-			},
-
-			float = {
-				padding = 20,
-			},
-
-			keymaps = {
-				["g?"] = "actions.show_help",
-				["<CR>"] = "actions.select",
-				["<C-v>"] = "actions.select_vsplit",
-				["<C-h>"] = "actions.select_split",
-				["<C-t>"] = "actions.select_tab",
-				["<C-p>"] = "actions.preview",
-				["<C-c>"] = "actions.close",
-				["<C-l>"] = "actions.refresh",
-				["-"] = "actions.parent",
-				["_"] = "actions.open_cwd",
-				["`"] = "actions.cd",
-				["~"] = "actions.tcd",
-				["gs"] = "actions.change_sort",
-				["gx"] = "actions.open_external",
-				["g."] = "actions.toggle_hidden",
-			},
-			use_default_keymaps = false,
-		})
-	end,
+	keys = {
+		{
+			"<leader>po",
+			function()
+				require("oil").open()
+			end,
+		},
+	},
+	dependencies = { { "echasnovski/mini.icons", opts = {} } },
 }

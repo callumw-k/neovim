@@ -1,73 +1,14 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.2",
-		dependencies = {
-			{ "nvim-lua/plenary.nvim", "folke/which-key.nvim" },
-		},
-		config = function(_, opts)
+		tag = "0.1.8",
+		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
+		config = function()
 			local telescope = require("telescope")
-			local builtin = require("telescope.builtin")
-
-			local mappings = {
-				f = {
-					b = {
-						function()
-							builtin.buffers()
-						end,
-						"Search open buffers",
-					},
-					g = {
-						function()
-							builtin.live_grep()
-						end,
-						"Search string",
-					},
-					m = {
-						function()
-							builtin.marks()
-						end,
-						"Find marks",
-					},
-					r = {
-						function()
-							builtin.lsp_references()
-						end,
-						"Find references",
-					},
-					s = {
-						function()
-							builtin.lsp_document_symbols()
-						end,
-						"Search the current LSP symbols",
-					},
-				},
-				b = {
-					s = {
-						function()
-							builtin.current_buffer_fuzzy_find()
-						end,
-						"Search current buffer",
-					},
-				},
-			}
-			if require("defaults.utils").is_windows() then
-				mappings.f.p = {
-					function()
-						builtin.find_files()
-					end,
-					"Fuzzy search files",
-				}
-			end
-
-			require("defaults.utils").which_key_register(mappings)
-			telescope.setup(opts)
-		end,
-		opts = function()
 			local actions = require("telescope.actions")
-			return {
+			telescope.setup({
 				defaults = {
-					file_ignore_patterns = { "node_modules" },
+					file_ignore_patterns = { "node_modules", ".git" },
 					mappings = {
 						i = {
 							["<C-j>"] = actions.move_selection_next,
@@ -75,10 +16,54 @@ return {
 						},
 					},
 				},
-				pickers = {
-					marks = {
-						theme = "dropdown",
-					},
+			})
+			telescope.load_extension("file_browser")
+		end,
+
+		keys = function()
+			local builtin = require("telescope.builtin")
+			return {
+				{
+					"<leader>fp",
+					function()
+						builtin.find_files()
+					end,
+					"Search files",
+				},
+				{
+					"<leader>fg",
+					function()
+						builtin.live_grep()
+					end,
+					"Search text",
+				},
+				{
+					"<leader>fs",
+					function()
+						builtin.lsp_document_symbols()
+					end,
+					"Search symbols",
+				},
+				{
+					"<leader>fb",
+					function()
+						builtin.buffers()
+					end,
+					"Search buffers",
+				},
+				{
+					"<leader>fr",
+					function()
+						builtin.lsp_references()
+					end,
+					"Search references",
+				},
+				{
+					"<leader>fe",
+					function()
+						builtin.diagnostics()
+					end,
+					"List diagnostics",
 				},
 			}
 		end,

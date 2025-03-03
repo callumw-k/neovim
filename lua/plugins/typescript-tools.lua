@@ -1,14 +1,11 @@
 return {
+	event = { "BufEnter", "BufNewFile" },
 	"pmizio/typescript-tools.nvim",
-	enabled = true,
-	dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-	config = function()
-		require("typescript-tools").setup({
-			settings = {
-				tsserver_plugins = {
-					"@styled/typescript-styled-plugin",
-				},
-			},
-		})
-	end,
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"neovim/nvim-lspconfig",
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+	},
+	opts = {},
 }

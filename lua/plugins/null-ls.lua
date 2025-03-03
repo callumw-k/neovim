@@ -10,18 +10,48 @@ local lsp_formatting = function(bufnr)
 	})
 end
 
+local helpers = require("config.helpers")
+
 return {
 	"jay-babu/mason-null-ls.nvim",
+
 	event = { "BufReadPre", "BufNewFile" },
+
+	keys = {
+		{
+			"<leader>ff",
+			function()
+				vim.lsp.buf.format()
+			end,
+			"Format files",
+		},
+	},
 	dependencies = {
 		"williamboman/mason.nvim",
-		"jose-elias-alvarez/null-ls.nvim",
+		"nvimtools/none-ls.nvim",
+		"nvimtools/none-ls-extras.nvim",
 	},
+
 	config = function()
-		require("mason").setup()
 		local null_ls = require("null-ls")
 
+		local has_eslint = helpers.if_file_exist("eslint.*")
+		local has_pubspec = helpers.if_file_exist("pubspec.*")
+
+		local sources = {}
+
+		if has_eslint then
+			table.insert(sources, require("none-ls.diagnostics.eslint_d"))
+			table.insert(sources, require("none-ls.code_actions.eslint_d"))
+			table.insert(sources, require("none-ls.formatting.eslint_d"))
+		end
+
+		if has_pubspec then
+			table.insert(sources, null_ls.builtins.formatting.dart_format)
+		end
+
 		null_ls.setup({
+			sources = sources,
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then
 					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
@@ -37,23 +67,9 @@ return {
 		})
 
 		require("mason-null-ls").setup({
-			ensure_installed = {},
+			ensure_installed = { "eslint_d", "stylua", "prettierd" },
 			automatic_installation = true,
-			handlers = {
-				eslint = function(source_name, methods)
-					null_ls.register(null_ls.builtins.diagnostics.eslint)
-					null_ls.register(null_ls.builtins.code_actions.eslint)
-				end,
-
-				prettierd = function(source_name, methods)
-					null_ls.register(
-						null_ls.builtins.formatting.prettierd.with({ extra_filetypes = { "svelte", "astro" } })
-					)
-				end,
-				stylua = function(source_name, methods)
-					null_ls.register(null_ls.builtins.formatting.stylua)
-				end,
-			},
+			handlers = {},
 		})
 	end,
 }

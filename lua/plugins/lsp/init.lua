@@ -1,4 +1,5 @@
 local group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true })
+local test = "empy"
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = group,
@@ -11,6 +12,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end, opts)
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+
+		-- vim.keymap.set("n", "<leader>e", vim.lsp.diagnostic.show_line_diagnostics, opts)
+		vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
 
 		vim.keymap.set("n", "<space>D", function()
 			require("telescope.builtin").lsp_type_definitions({})

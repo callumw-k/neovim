@@ -56,7 +56,14 @@ return {
 					function()
 						builtin.lsp_references()
 					end,
-					"Search buffers",
+					"Search references",
+				},
+				{
+					"<leader>fe",
+					function()
+						builtin.diagnostics()
+					end,
+					"List diagnostics",
 				},
 			}
 		end,

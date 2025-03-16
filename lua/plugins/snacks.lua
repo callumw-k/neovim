@@ -147,6 +147,13 @@ return {
 				})
 			end,
 		},
+		{
+			"<leader>fp",
+			desc = "File picker",
+			function()
+				Snacks.picker.files()
+			end,
+		},
 	},
 	init = function()
 		vim.api.nvim_create_autocmd("User", {

@@ -23,13 +23,13 @@ return {
 		keys = function()
 			local builtin = require("telescope.builtin")
 			return {
-				{
-					"<leader>fp",
-					function()
-						builtin.find_files()
-					end,
-					"Search files",
-				},
+				-- {
+				-- 	"<leader>fp",
+				-- 	function()
+				-- 		builtin.find_files()
+				-- 	end,
+				-- 	"Search files",
+				-- },
 				{
 					"<leader>fg",
 					function()

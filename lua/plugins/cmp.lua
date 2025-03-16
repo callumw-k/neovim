@@ -22,7 +22,7 @@ return {
 			},
 			formatting = {
 				format = lspkind.cmp_format({
-					mode = "symbol_text", -- show only symbol annotations
+					mode = "symbol_text",
 				}),
 			},
 			mapping = cmp.mapping.preset.insert({
@@ -52,6 +52,7 @@ return {
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
+				{ name = "path" },
 			}, {
 				{ name = "buffer" },
 			}),

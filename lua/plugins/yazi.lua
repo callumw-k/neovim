@@ -4,6 +4,7 @@ return {
 	event = { "VeryLazy" },
 	-- lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
 	-- priority = vim.fn.argc(1) == 0 and 1000 or 0,
+	enabled = false,
 	keys = {
 		{
 			"<leader>pv",

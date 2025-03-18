@@ -6,7 +6,6 @@ return {
 	opts = {
 		dashboard = { enabled = true },
 		bigfile = { enabled = true },
-		notifier = { enabled = true },
 		quickfile = { enabled = true },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
@@ -152,6 +151,13 @@ return {
 			desc = "File picker",
 			function()
 				Snacks.picker.files()
+			end,
+		},
+		{
+			"<leader>pv",
+			desc = "File tree",
+			function()
+				Snacks.explorer.open()
 			end,
 		},
 	},

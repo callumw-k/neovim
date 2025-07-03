@@ -15,6 +15,7 @@ return {
 			layout = { preset = "sidebar", preview = true },
 		},
 		words = { enabled = true },
+		picker = { enabled = true },
 		notifier = {
 			enabled = true,
 			timeout = 3000,

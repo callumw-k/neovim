@@ -1,7 +1,7 @@
 local o = vim.opt
 o.fileencoding = "uft-8"
 o.hidden = true
-o.cmdheight = 2
+o.cmdheight = 1
 o.updatetime = 300
 o.hlsearch = false
 o.scrolloff = 8

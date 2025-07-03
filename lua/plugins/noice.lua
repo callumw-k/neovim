@@ -10,6 +10,7 @@ return {
 	},
 	{
 		"folke/noice.nvim",
+		enabled = true,
 		opts = {},
 		dependencies = {
 			"MunifTanjim/nui.nvim",

@@ -8,6 +8,12 @@ return {
 		bigfile = { enabled = true },
 		quickfile = { enabled = true },
 		statuscolumn = { enabled = true },
+		explorer = {
+			enabled = true,
+			auto_close = true,
+			tree = true,
+			layout = { preset = "sidebar", preview = true },
+		},
 		words = { enabled = true },
 		notifier = {
 			enabled = true,

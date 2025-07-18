@@ -26,9 +26,23 @@ vim.api.nvim_create_autocmd("LspAttach", {
 return {
 	{
 		"mason-org/mason-lspconfig.nvim",
-		opts = {},
+		opts = {
+			automatic_enable = {
+				exclude = {
+					"ts_ls",
+				},
+			},
+		},
 		dependencies = {
-			{ "mason-org/mason.nvim", opts = {} },
+			{
+				"mason-org/mason.nvim",
+				opts = {
+					registries = {
+						"github:mason-org/mason-registry",
+						"github:Crashdummyy/mason-registry",
+					},
+				},
+			},
 			"neovim/nvim-lspconfig",
 		},
 	},

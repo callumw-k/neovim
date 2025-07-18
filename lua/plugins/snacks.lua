@@ -160,13 +160,13 @@ return {
 				Snacks.picker.files()
 			end,
 		},
-		{
-			"<leader>pv",
-			desc = "File tree",
-			function()
-				Snacks.explorer.open()
-			end,
-		},
+		-- {
+		-- 	"<leader>pv",
+		-- 	desc = "File tree",
+		-- 	function()
+		-- 		Snacks.explorer.open()
+		-- 	end,
+		-- },
 	},
 	init = function()
 		vim.api.nvim_create_autocmd("User", {

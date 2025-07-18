@@ -5,7 +5,8 @@ local lsp_formatting = function(bufnr)
 		async = false,
 		bufnr = bufnr,
 		filter = function(client)
-			return client.name == "null-ls"
+			print(client.name)
+			return client.name == "null-ls" or client.name == "dartls"
 		end,
 	})
 end
@@ -46,9 +47,9 @@ return {
 			table.insert(sources, require("none-ls.formatting.eslint_d"))
 		end
 
-		if has_pubspec then
-			table.insert(sources, null_ls.builtins.formatting.dart_format)
-		end
+		-- if has_pubspec then
+		-- 	table.insert(sources, null_ls.builtins.formatting.dart_format)
+		-- end
 
 		null_ls.setup({
 			sources = sources,

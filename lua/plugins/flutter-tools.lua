@@ -34,6 +34,13 @@ return {
 			}
 		end,
 		opts = {
+			dev_log = {
+				enabled = true,
+				notify_errors = false,
+				focus_on_open = false,
+				auto_open = false,
+				open_cmd = "10split",
+			},
 			fvm = true,
 			dev_tools = {
 				autostart = true,
